@@ -2,6 +2,7 @@ package com.mycompany.prueba2pp;
 
 import java.util.ArrayList;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -29,7 +30,7 @@ public class App extends Application {
         
         
 
-        
+        // apartir de aca OJO
         ArrayList <Integer> arreglo = new ArrayList();
         
         for (int i=0; i<7; i++){
@@ -39,6 +40,7 @@ public class App extends Application {
         for (int i=0; i<7; i++){
             System.out.println(arreglo.get(i)+ " ");
         }
+       
         
         Label etiqueta = new Label(arreglo.toString());
         anchor.getChildren().add(etiqueta);
@@ -50,8 +52,25 @@ public class App extends Application {
         rectangulo1.setWidth(10);
         rectangulo1.setHeight(50);
         anchor.getChildren().add(rectangulo1);
+        
         stage.setScene(scena);
+        
         stage.show();
+    }
+    
+    public void Ordenamiento (ArrayList <Integer> arreglo){
+        int aux=0,j=0;
+        for(int i=1;i<arreglo.size();i++){
+          aux=arreglo.get(i);
+          j=i-1;
+          while (j>=0 && aux<arreglo.get(j)){
+             arreglo.set(j+1, arreglo.get(j));
+             j--;
+          }
+          arreglo.set(j+1, aux);
+        }
+        
+    
     }
 
     public static void main(String[] args) {
