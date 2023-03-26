@@ -46,7 +46,7 @@ public class App extends Application {
         anchor.getChildren().add(etiqueta);
         
         
-        
+        Ordenamiento(arreglo);
         
         
         Rectangle rectangulo1 = new Rectangle ();
