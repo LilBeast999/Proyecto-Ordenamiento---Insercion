@@ -54,7 +54,7 @@ public class App extends Application {
         rectangulo1.setY(50);
         rectangulo1.setFill(Color.PINK);
         rectangulo1.setWidth(40);
-        rectangulo1.setHeight((arreglo.get(0)*900)/99);
+        rectangulo1.setHeight((arreglo.get(0)*700)/99);
         anchor.getChildren().add(rectangulo1);
         stage.setScene(scena);
         Label cantRec1 = new Label (arreglo.get(0).toString());
@@ -66,7 +66,7 @@ public class App extends Application {
         rectangulo2.setY(50);
         rectangulo2.setFill(Color.PINK);
         rectangulo2.setWidth(40);
-        rectangulo2.setHeight((arreglo.get(1)*900)/99);
+        rectangulo2.setHeight((arreglo.get(1)*700)/99);
         anchor.getChildren().add(rectangulo2);
         stage.setScene(scena);    
         Label cantRec2 = new Label (arreglo.get(1).toString());
@@ -78,7 +78,7 @@ public class App extends Application {
         rectangulo3.setY(50);
         rectangulo3.setFill(Color.PINK);
         rectangulo3.setWidth(40);
-        rectangulo3.setHeight((arreglo.get(2)*900)/99);
+        rectangulo3.setHeight((arreglo.get(2)*700)/99);
         anchor.getChildren().add(rectangulo3);
         stage.setScene(scena);
         Label cantRec3 = new Label (arreglo.get(2).toString());
@@ -90,7 +90,7 @@ public class App extends Application {
         rectangulo4.setY(50);
         rectangulo4.setFill(Color.PINK);
         rectangulo4.setWidth(40);
-        rectangulo4.setHeight((arreglo.get(3)*900)/99);
+        rectangulo4.setHeight((arreglo.get(3)*700)/99);
         anchor.getChildren().add(rectangulo4);
         stage.setScene(scena);
         Label cantRec4 = new Label (arreglo.get(3).toString());
@@ -102,7 +102,7 @@ public class App extends Application {
         rectangulo5.setY(50);
         rectangulo5.setFill(Color.PINK);
         rectangulo5.setWidth(40);
-        rectangulo5.setHeight((arreglo.get(4)*900)/99);
+        rectangulo5.setHeight((arreglo.get(4)*700)/99);
         anchor.getChildren().add(rectangulo5);
         stage.setScene(scena);
         Label cantRec5 = new Label (arreglo.get(4).toString());
@@ -114,7 +114,7 @@ public class App extends Application {
         rectangulo6.setY(50);
         rectangulo6.setFill(Color.PINK);
         rectangulo6.setWidth(40);
-        rectangulo6.setHeight((arreglo.get(5)*900)/99);
+        rectangulo6.setHeight((arreglo.get(5)*700)/99);
         anchor.getChildren().add(rectangulo6);
         stage.setScene(scena);
         Label cantRec6 = new Label (arreglo.get(5).toString());
@@ -126,7 +126,7 @@ public class App extends Application {
         rectangulo7.setY(50);
         rectangulo7.setFill(Color.PINK);
         rectangulo7.setWidth(40);
-        rectangulo7.setHeight((arreglo.get(6)*900)/99);
+        rectangulo7.setHeight((arreglo.get(6)*700)/99);
         anchor.getChildren().add(rectangulo7);
         stage.setScene(scena);
         Label cantRec7 = new Label (arreglo.get(6).toString());
@@ -138,7 +138,7 @@ public class App extends Application {
         rectangulo8.setY(50);
         rectangulo8.setFill(Color.PINK);
         rectangulo8.setWidth(40);
-        rectangulo8.setHeight((arreglo.get(7)*900)/99);
+        rectangulo8.setHeight((arreglo.get(7)*700)/99);
         anchor.getChildren().add(rectangulo8);
         stage.setScene(scena);
         Label cantRec8 = new Label (arreglo.get(7).toString());
@@ -150,7 +150,7 @@ public class App extends Application {
         rectangulo9.setY(50);
         rectangulo9.setFill(Color.PINK);
         rectangulo9.setWidth(40);
-        rectangulo9.setHeight((arreglo.get(8)*900)/99);
+        rectangulo9.setHeight((arreglo.get(8)*700)/99);
         anchor.getChildren().add(rectangulo9);
         stage.setScene(scena);
         Label cantRec9 = new Label (arreglo.get(8).toString());
@@ -162,7 +162,7 @@ public class App extends Application {
         rectangulo10.setY(50);
         rectangulo10.setFill(Color.PINK);
         rectangulo10.setWidth(40);
-        rectangulo10.setHeight((arreglo.get(9)*900)/99);
+        rectangulo10.setHeight((arreglo.get(9)*700)/99);
         anchor.getChildren().add(rectangulo10);
         stage.setScene(scena);
         Label cantRec10 = new Label (arreglo.get(9).toString());
