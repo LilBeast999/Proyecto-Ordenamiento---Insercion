@@ -183,10 +183,23 @@ public class App extends Application {
           while (j>=0 && aux<arreglo.get(j)){
              arreglo.set(j+1, arreglo.get(j));
              j--;
+             System.out.print("--->  ");
+             imprimeArreglo(arreglo);
           }
+          
           arreglo.set(j+1, aux);
+          
         }
         
+    
+    }
+    
+    public void imprimeArreglo(ArrayList <Integer> arreglo){
+        System.out.print("[ ");
+        for (int i = 0; i < arreglo.size(); i++) {
+            System.out.print(arreglo.get(i)+" "); 
+        }
+        System.out.println("]");
     
     }
 
