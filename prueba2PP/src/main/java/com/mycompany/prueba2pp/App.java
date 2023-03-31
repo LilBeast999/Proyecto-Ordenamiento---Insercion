@@ -25,9 +25,9 @@ public class App extends Application {
         var javafxVersion = SystemInfo.javafxVersion();
 
         Scene scena = new Scene (anchor);
-        stage.setWidth(800);
-        stage.setHeight(600);
-        
+        stage.setWidth(1024);
+        stage.setHeight(768);
+        scena.setFill(Color.web("#AABDD8"));
         
 
         // apartir de aca OJO
@@ -40,9 +40,13 @@ public class App extends Application {
         for (int i=0; i<10; i++){
             System.out.println(arreglo.get(i)+ " ");
         }
+        
+        Lapiz lapiz= new Lapiz(anchor);
+        
+        anchor=lapiz.dibujarfondo();
        
         
-        Label etiqueta = new Label(arreglo.toString());
+      /*  Label etiqueta = new Label(arreglo.toString());
         anchor.getChildren().add(etiqueta);
         
         
@@ -170,8 +174,11 @@ public class App extends Application {
         stage.setScene(scena);
         Label cantRec10 = new Label (arreglo.get(9).toString());
         anchor.getChildren().add(cantRec10);
-        cantRec10.relocate(515, 60);
+        cantRec10.relocate(515, 60);*/
+      
         
+        stage.setScene(scena);
+      
         
 
         
