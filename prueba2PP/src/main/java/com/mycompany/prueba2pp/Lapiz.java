@@ -6,8 +6,11 @@ package com.mycompany.prueba2pp;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import javafx.scene.shape.*;
+
 
 /**
  *
@@ -29,6 +32,12 @@ public class Lapiz {
     
     
     public  AnchorPane dibujarfondo(){
+        
+     
+        
+        
+        
+     //lineas de las montanas   
      Line line= new Line();
      line.setStartX(0);
      line.setStartY(0);
@@ -311,6 +320,156 @@ public class Lapiz {
      line39.setEndY(190);
      line39.setStrokeWidth(5);
      
+     Rectangle rectangulo1 = new Rectangle();
+     rectangulo1.setX(160);
+     rectangulo1.setY(48);
+     rectangulo1.setWidth(100);
+     rectangulo1.setHeight(350);
+     rectangulo1.setFill(Color.web("#326BBD"));
+     rectangulo1.setRotate(-53);
+     
+     Rectangle rectangulo2 = new Rectangle();
+     rectangulo2.setX(-30);
+     rectangulo2.setY(166);
+     rectangulo2.setWidth(300);
+     rectangulo2.setHeight(400);
+     rectangulo2.setFill(Color.web("#326BBD"));
+     rectangulo2.setRotate(45);
+     
+     Rectangle rectangulo3 = new Rectangle();
+     rectangulo3.setX(0);
+     rectangulo3.setY(400);
+     rectangulo3.setWidth(1920);
+     rectangulo3.setHeight(220);
+     rectangulo3.setFill(Color.web("#326BBD"));
+     rectangulo3.setRotate(0);
+     
+     Rectangle rectangulo4 = new Rectangle();
+     rectangulo4.setX(0);
+     rectangulo4.setY(250);
+     rectangulo4.setWidth(1920);
+     rectangulo4.setHeight(200);
+     rectangulo4.setFill(Color.web("#326BBD"));
+     rectangulo4.setRotate(0);   
+     
+     Rectangle rectangulo5 = new Rectangle();
+     rectangulo5.setX(0);
+     rectangulo5.setY(70);
+     rectangulo5.setWidth(1920);
+     rectangulo5.setHeight(200);
+     rectangulo5.setFill(Color.web("#326BBD"));
+     rectangulo5.setRotate(0); 
+     
+     Rectangle rectangulo6 = new Rectangle();
+     rectangulo6.setX(190);
+     rectangulo6.setY(-105);
+     rectangulo6.setWidth(200);
+     rectangulo6.setHeight(390);
+     rectangulo6.setFill(Color.web("#AABDD8"));
+     rectangulo6.setRotate(127);
+     
+     Rectangle rectangulo7 = new Rectangle();
+     rectangulo7.setX(368);
+     rectangulo7.setY(-103);
+     rectangulo7.setWidth(200);
+     rectangulo7.setHeight(393);
+     rectangulo7.setFill(Color.web("#AABDD8"));
+     rectangulo7.setRotate(-135); 
+     
+     Rectangle rectangulo8 = new Rectangle();
+     rectangulo8.setX(760);
+     rectangulo8.setY(-156);
+     rectangulo8.setWidth(200);
+     rectangulo8.setHeight(393);
+     rectangulo8.setFill(Color.web("#AABDD8"));
+     rectangulo8.setRotate(72);
+     
+     Rectangle rectangulo9 = new Rectangle();
+     rectangulo9.setX(533);
+     rectangulo9.setY(-202);
+     rectangulo9.setWidth(200);
+     rectangulo9.setHeight(393);
+     rectangulo9.setFill(Color.web("#AABDD8"));
+     rectangulo9.setRotate(-45);
+     
+     Rectangle rectangulo10 = new Rectangle();
+     rectangulo10.setX(1698);
+     rectangulo10.setY(-126);
+     rectangulo10.setWidth(200);
+     rectangulo10.setHeight(393);
+     rectangulo10.setFill(Color.web("#AABDD8"));
+     rectangulo10.setRotate(64);
+     
+     Rectangle rectangulo11 = new Rectangle();
+     rectangulo11.setX(1507);
+     rectangulo11.setY(-157);
+     rectangulo11.setWidth(200);
+     rectangulo11.setHeight(393);
+     rectangulo11.setFill(Color.web("#AABDD8"));
+     rectangulo11.setRotate(-43);
+     
+     Rectangle rectangulo12 = new Rectangle();
+     rectangulo12.setX(1239);
+     rectangulo12.setY(-195);
+     rectangulo12.setWidth(200);
+     rectangulo12.setHeight(393);
+     rectangulo12.setFill(Color.web("#AABDD8"));
+     rectangulo12.setRotate(-56);
+     
+     Rectangle rectangulo13 = new Rectangle();
+     rectangulo13.setX(1285);
+     rectangulo13.setY(-170);
+     rectangulo13.setWidth(100);
+     rectangulo13.setHeight(393);
+     rectangulo13.setFill(Color.web("#AABDD8"));
+     rectangulo13.setRotate(64);
+     
+     Rectangle rectangulo14 = new Rectangle();
+     rectangulo14.setX(962);
+     rectangulo14.setY(-148);
+     rectangulo14.setWidth(100);
+     rectangulo14.setHeight(393);
+     rectangulo14.setFill(Color.web("#AABDD8"));
+     rectangulo14.setRotate(-71);
+     
+     Rectangle rectangulo15 = new Rectangle();
+     rectangulo15.setX(1481);
+     rectangulo15.setY(-182);
+     rectangulo15.setWidth(100);
+     rectangulo15.setHeight(393);
+     rectangulo15.setFill(Color.web("#AABDD8"));
+     rectangulo15.setRotate(38);
+     
+     //#e8ede5
+     Rectangle rectangulo16 = new Rectangle();
+     rectangulo16.setX(1481);
+     rectangulo16.setY(-182);
+     rectangulo16.setWidth(10);
+     rectangulo16.setHeight(39);
+     rectangulo16.setFill(Color.RED);
+     rectangulo16.setRotate(38);
+     
+    
+     
+     //agregar al fondo
+     //aqui depende del orden que se coloque va hacia el fondo o adelante
+     this.anchor.getChildren().add(rectangulo1);
+     this.anchor.getChildren().add(rectangulo2);
+     this.anchor.getChildren().add(rectangulo3);
+     this.anchor.getChildren().add(rectangulo4);
+     this.anchor.getChildren().add(rectangulo5);
+     this.anchor.getChildren().add(rectangulo6);
+     this.anchor.getChildren().add(rectangulo7);
+     this.anchor.getChildren().add(rectangulo8);
+     this.anchor.getChildren().add(rectangulo9);
+     this.anchor.getChildren().add(rectangulo10);
+     this.anchor.getChildren().add(rectangulo11);
+     this.anchor.getChildren().add(rectangulo12);
+     this.anchor.getChildren().add(rectangulo13);
+     this.anchor.getChildren().add(rectangulo14);
+     this.anchor.getChildren().add(rectangulo15);
+     this.anchor.getChildren().add(rectangulo16);
+     //this.anchor.getChildren().add(rectangulo17);
      this.anchor.getChildren().add(line);
      this.anchor.getChildren().add(line1);
      this.anchor.getChildren().add(line2);
@@ -351,8 +510,8 @@ public class Lapiz {
      this.anchor.getChildren().add(line37);
      this.anchor.getChildren().add(line38);
      this.anchor.getChildren().add(line39);
-     //this.anchor.getChildren().add(line40);
-     //this.anchor.getChildren().add(line41);
+     
+
      
      
      return this.anchor;
