@@ -569,14 +569,66 @@ public class Lapiz {
      rectangulo31.setFill(Color.web("#e8ede5"));
      rectangulo31.setRotate(57);
      
-     Rectangle rectangulo32 = new Rectangle(800,210,15,20);
-     rectangulo32.setFill(Color.web("#FF0000"));
-     rectangulo32.setRotate(57);
+     Rectangle rectangulo32 = new Rectangle(944,100,25,80);
+     rectangulo32.setFill(Color.web("#e8ede5"));
+     rectangulo32.setRotate(54);
+     
+     Rectangle rectangulo33 = new Rectangle(1040,100,25,80);
+     rectangulo33.setFill(Color.web("#e8ede5"));
+     rectangulo33.setRotate(-54);
+     
+     Rectangle rectangulo34 = new Rectangle(1030,109,24,72);
+     rectangulo34.setFill(Color.web("#e8ede5"));
+     rectangulo34.setRotate(-36);
      
      
+     Rectangle rectangulo35 = new Rectangle(992,115,24,50);
+     rectangulo35.setFill(Color.web("#e8ede5"));
+     rectangulo35.setRotate(36);
+     
+     Rectangle rectangulo36 = new Rectangle(955,108,24,80);
+     rectangulo36.setFill(Color.web("#e8ede5"));
+     rectangulo36.setRotate(41);
+     
+     Rectangle rectangulo37 = new Rectangle(947,75.5,21,102);
+     rectangulo37.setFill(Color.web("#e8ede5"));
+     rectangulo37.setRotate(70);
+     
+     Rectangle rectangulo38 = new Rectangle(1045,72,21,120);
+     rectangulo38.setFill(Color.web("#e8ede5"));
+     rectangulo38.setRotate(-72);
+     
+     Rectangle rectangulo39 = new Rectangle(1080,118,16,80);
+     rectangulo39.setFill(Color.web("#e8ede5"));
+     rectangulo39.setRotate(72);
+     
+     Rectangle rectangulo40 = new Rectangle(918,112,10,40);
+     rectangulo40.setFill(Color.web("#e8ede5"));
+     rectangulo40.setRotate(72);
+     
+     Rectangle rectangulo41 = new Rectangle(967,116,10,40);
+     rectangulo41.setFill(Color.web("#e8ede5"));
+     rectangulo41.setRotate(125);
+     
+     Rectangle rectangulo42 = new Rectangle(1115,133,10,40);
+     rectangulo42.setFill(Color.web("#e8ede5"));
+     rectangulo42.setRotate(75);
+     
+     Rectangle rectangulo43 = new Rectangle(1110,133,10,40);
+     rectangulo43.setFill(Color.web("#e8ede5"));
+     rectangulo43.setRotate(75);
+     
+
      
      
+     Polygon poly = new Polygon();
+     poly.getPoints().addAll(new Double[] {1525.0,102.0,1477.0,168.0,1520.0,198.0,1550.0,178.0,1590.0,207.0,1602.0,188.0});
+     poly.setFill(Color.web("#e8ede5"));
      
+     Polygon poly1 = new Polygon();
+     poly1.getPoints().addAll(new Double[] {1930.0,115.0, 1820.0,170.0,1870.0,190.0, 1900.0, 158.0,1920.0,190.0});
+     poly1.setFill(Color.web("#e8ede5"));
+
      
      //agregar al fondo
      //aqui depende del orden que se coloque va hacia el fondo o adelante
@@ -612,15 +664,21 @@ public class Lapiz {
      this.anchor.getChildren().add(rectangulo30);
      this.anchor.getChildren().add(rectangulo31);
      this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
-     //this.anchor.getChildren().add(rectangulo32);
+     this.anchor.getChildren().add(rectangulo33);
+     this.anchor.getChildren().add(rectangulo34);
+     this.anchor.getChildren().add(rectangulo35);
+     this.anchor.getChildren().add(rectangulo36);
+     this.anchor.getChildren().add(rectangulo37);
+     this.anchor.getChildren().add(rectangulo38);
+     this.anchor.getChildren().add(rectangulo39);
+     this.anchor.getChildren().add(rectangulo40);
+     this.anchor.getChildren().add(rectangulo41);
+     this.anchor.getChildren().add(rectangulo42);
+     this.anchor.getChildren().add(rectangulo43);
+     //this.anchor.getChildren().add(rectangulo45);
+     //this.anchor.getChildren().add(rectangulo46);
+     this.anchor.getChildren().add(poly);
+     this.anchor.getChildren().add(poly1);
      this.anchor.getChildren().add(line);
      this.anchor.getChildren().add(line1);
      this.anchor.getChildren().add(line2);
