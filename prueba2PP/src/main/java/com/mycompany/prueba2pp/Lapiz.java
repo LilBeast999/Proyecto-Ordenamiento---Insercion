@@ -676,41 +676,185 @@ public class Lapiz {
      public void dibujargrua(){
     
     }
-     
-    public void dibujar1(){
     
+     public AnchorPane dibujar0() {
+
+     Rectangle cero1 = new Rectangle(10, 10, 40, 10);
+        cero1.setFill(Color.BLACK);
+        Rectangle cero2 = new Rectangle(10, 10, 10, 60);
+        cero2.setFill(Color.BLACK);
+        Rectangle cero3 = new Rectangle(10, 60, 40, 10);
+        cero3.setFill(Color.BLACK);
+        Rectangle cero4 = new Rectangle(40, 10, 10, 60);
+        cero4.setFill(Color.BLACK);
+         this.anchor.getChildren().add(cero1);
+          this.anchor.getChildren().add(cero2);
+           this.anchor.getChildren().add(cero3);
+            this.anchor.getChildren().add(cero4); 
+    return this.anchor;
+}
+     
+    public AnchorPane dibujar1(){
+        int x,y;
+        x=40;
+        Rectangle uno1 = new Rectangle(30+x, 10, 10, 60);
+        uno1.setFill(Color.BLACK);
+        this.anchor.getChildren().add(uno1);
+     return this.anchor;
     } 
     
-    public void dibujar2(){
-    
+    public AnchorPane dibujar2(){
+         int x,y;
+        x=90;
+        Rectangle dos1 = new Rectangle(10+x, 10, 40, 10);
+        dos1.setFill(Color.BLACK);
+        Rectangle dos2 = new Rectangle(40+x, 10, 10, 30);
+        dos2.setFill(Color.BLACK);
+        Rectangle dos3 = new Rectangle(10+x, 40, 40, 10);
+        dos3.setFill(Color.BLACK);
+        Rectangle dos4 = new Rectangle(10+x, 40, 10, 30);
+        dos4.setFill(Color.BLACK);
+        Rectangle dos5 = new Rectangle(10+x, 60, 40, 10);
+        dos5.setFill(Color.BLACK);
+        this.anchor.getChildren().add(dos1);
+        this.anchor.getChildren().add(dos2);
+        this.anchor.getChildren().add(dos3);
+        this.anchor.getChildren().add(dos4);
+        this.anchor.getChildren().add(dos5);
+        
+     return this.anchor;
     }
     
-    public void dibujar3(){
-    
+    public AnchorPane dibujar3(){
+         int x,y;
+        x=140;
+        Rectangle tres1 = new Rectangle(10+x, 10, 40, 10);
+        tres1.setFill(Color.BLACK);
+        Rectangle tres2 = new Rectangle(40+x, 20, 10, 30);
+        tres2.setFill(Color.BLACK);
+        Rectangle tres3 = new Rectangle(10+x, 40, 40, 10);
+        tres3.setFill(Color.BLACK);
+        Rectangle tres4 = new Rectangle(40+x, 40, 10, 30);
+        tres4.setFill(Color.BLACK);
+        Rectangle tres5 = new Rectangle(10+x, 60, 40, 10);
+        tres5.setFill(Color.BLACK);
+         this.anchor.getChildren().add(tres1);
+        this.anchor.getChildren().add(tres2);
+        this.anchor.getChildren().add(tres3);
+        this.anchor.getChildren().add(tres4);
+        this.anchor.getChildren().add(tres5);
+     return this.anchor;
     }
     
-    public void dibujar4(){
-    
+    public AnchorPane dibujar4(){
+         int x,y;
+        x=190;
+        Rectangle cuatro1 = new Rectangle(10+x, 10, 10, 30);
+        cuatro1.setFill(Color.BLACK);
+        Rectangle cuatro2 = new Rectangle(40+x, 10, 10, 60);
+        cuatro2.setFill(Color.BLACK);
+        Rectangle cuatro3 = new Rectangle(10+x, 40, 40, 10);
+        cuatro3.setFill(Color.BLACK);
+         this.anchor.getChildren().add(cuatro1);
+        this.anchor.getChildren().add(cuatro2);
+        this.anchor.getChildren().add(cuatro3);
+
+        return this.anchor;
     }
     
-    public void dibujar5(){
-    
+    public AnchorPane dibujar5(){
+         int x,y;
+        x=240;
+        Rectangle cinco1 = new Rectangle(10+x, 10, 40, 10);
+        cinco1.setFill(Color.BLACK);
+        Rectangle cinco2 = new Rectangle(10+x, 20, 10, 30);
+        cinco2.setFill(Color.BLACK);
+        Rectangle cinco3 = new Rectangle(10+x, 40, 40, 10);
+        cinco3.setFill(Color.BLACK);
+        Rectangle cinco4 = new Rectangle(40+x, 40, 10, 30);
+        cinco4.setFill(Color.BLACK);
+        Rectangle cinco5 = new Rectangle(10+x, 60, 40, 10);
+        cinco5.setFill(Color.BLACK);
+         this.anchor.getChildren().add(cinco1);
+        this.anchor.getChildren().add(cinco2);
+        this.anchor.getChildren().add(cinco3);
+        this.anchor.getChildren().add(cinco4);
+        this.anchor.getChildren().add(cinco5);
+     return this.anchor;
     }
     
-    public void dibujar6(){
-    
+    public AnchorPane dibujar6(){
+         int x,y;
+        x=290;
+         Rectangle seis1 = new Rectangle(10+x, 10, 40, 10);
+        seis1.setFill(Color.BLACK);
+        Rectangle seis2 = new Rectangle(10+x, 10, 10, 60);
+        seis2.setFill(Color.BLACK);
+        Rectangle seis3 = new Rectangle(10+x, 40, 40, 10);
+        seis3.setFill(Color.BLACK);
+        Rectangle seis4 = new Rectangle(40+x, 40, 10, 30);
+        seis4.setFill(Color.BLACK);
+        Rectangle seis5 = new Rectangle(10+x, 60, 40, 10);
+        seis5.setFill(Color.BLACK);
+        this.anchor.getChildren().add(seis1);
+        this.anchor.getChildren().add(seis2);
+        this.anchor.getChildren().add(seis3);
+        this.anchor.getChildren().add(seis4);
+        this.anchor.getChildren().add(seis5);
+     return this.anchor;
     }
     
-    public void dibujar7(){
-    
+    public AnchorPane dibujar7(){
+         int x,y;
+        x=340;
+        Rectangle siete1 = new Rectangle(10+x, 10, 40, 10);
+        siete1.setFill(Color.BLACK);
+        Rectangle siete2 = new Rectangle(40+x, 10, 10, 60);
+        siete2.setFill(Color.BLACK);
+        this.anchor.getChildren().add(siete1);
+        this.anchor.getChildren().add(siete2);
+
+     return this.anchor;
     }
     
-    public void dibujar8(){
-    
+    public AnchorPane dibujar8(){
+        int x,y;
+        x=390;
+        Rectangle ocho1 = new Rectangle(10+x, 10, 40, 10);
+        ocho1.setFill(Color.BLACK);
+        Rectangle ocho2 = new Rectangle(10+x, 10, 10, 60);
+        ocho2.setFill(Color.BLACK);
+        Rectangle ocho3 = new Rectangle(10+x, 40, 40, 10);
+        ocho3.setFill(Color.BLACK);
+        Rectangle ocho4 = new Rectangle(10+x, 60, 40, 10);
+        ocho4.setFill(Color.BLACK);
+        Rectangle ocho5 = new Rectangle(40+x, 10, 10, 60);
+        ocho5.setFill(Color.BLACK);
+        this.anchor.getChildren().add(ocho1);
+        this.anchor.getChildren().add(ocho2);
+        this.anchor.getChildren().add(ocho3);
+        this.anchor.getChildren().add(ocho4);
+        this.anchor.getChildren().add(ocho5);
+     return this.anchor;
     }
     
-    public void dibujar9(){
-    
+    public AnchorPane dibujar9(){
+         int x,y;
+        x=440;
+        Rectangle nueve1 = new Rectangle(10+x, 10, 40, 10);
+        nueve1.setFill(Color.BLACK);
+        Rectangle nueve2 = new Rectangle(10+x, 10, 10, 40);
+        nueve2.setFill(Color.BLACK);
+        Rectangle nueve3 = new Rectangle(10+x, 40, 40, 10);
+        nueve3.setFill(Color.BLACK);
+        Rectangle nueve4 = new Rectangle(40+x, 10, 10, 60);
+        nueve4.setFill(Color.BLACK);
+        this.anchor.getChildren().add(nueve1);
+        this.anchor.getChildren().add(nueve2);
+        this.anchor.getChildren().add(nueve3);
+        this.anchor.getChildren().add(nueve4);
+        
+     return this.anchor;
     }
     
     public void dibujargancho(){

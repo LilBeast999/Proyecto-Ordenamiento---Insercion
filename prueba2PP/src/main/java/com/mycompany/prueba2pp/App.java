@@ -42,6 +42,17 @@ public class App extends Application {
         Lapiz lapiz= new Lapiz(anchor);
         
         anchor=lapiz.dibujarfondo();
+        anchor=lapiz.dibujar0();
+        anchor=lapiz.dibujar1();
+        anchor=lapiz.dibujar2();
+        anchor=lapiz.dibujar3();
+        anchor=lapiz.dibujar4();
+        anchor=lapiz.dibujar5();
+        anchor=lapiz.dibujar6();
+        anchor=lapiz.dibujar7();
+        anchor=lapiz.dibujar8();
+        anchor=lapiz.dibujar9();
+        
        
         
       /*  Label etiqueta = new Label(arreglo.toString());
