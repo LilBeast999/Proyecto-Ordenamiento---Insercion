@@ -21,8 +21,6 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         AnchorPane anchor = new AnchorPane();
-        var javaVersion = SystemInfo.javaVersion();
-        var javafxVersion = SystemInfo.javafxVersion();
 
         Scene scena = new Scene (anchor);
         stage.setWidth(1024);

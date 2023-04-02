@@ -442,14 +442,141 @@ public class Lapiz {
      
      //#e8ede5
      Rectangle rectangulo16 = new Rectangle();
-     rectangulo16.setX(1481);
-     rectangulo16.setY(-182);
-     rectangulo16.setWidth(10);
-     rectangulo16.setHeight(39);
-     rectangulo16.setFill(Color.RED);
-     rectangulo16.setRotate(38);
+     rectangulo16.setX(1261);
+     rectangulo16.setY(100);
+     rectangulo16.setWidth(30);
+     rectangulo16.setHeight(59);
+     rectangulo16.setFill(Color.web("#e8ede5"));
+     rectangulo16.setRotate(59);
      
+     Rectangle rectangulo17 = new Rectangle();
+     rectangulo17.setX(1292);
+     rectangulo17.setY(103);
+     rectangulo17.setWidth(34);
+     rectangulo17.setHeight(63);
+     rectangulo17.setFill(Color.web("#e8ede5"));
+     rectangulo17.setRotate(-48);
+     
+     Rectangle rectangulo18 = new Rectangle();
+     rectangulo18.setX(1322);
+     rectangulo18.setY(90);
+     rectangulo18.setWidth(14);
+     rectangulo18.setHeight(80);
+     rectangulo18.setFill(Color.web("#e8ede5"));
+     rectangulo18.setRotate(-55);
+     
+     Rectangle rectangulo19 = new Rectangle();
+     rectangulo19.setX(1345);
+     rectangulo19.setY(116);
+     rectangulo19.setWidth(14);
+     rectangulo19.setHeight(50);
+     rectangulo19.setFill(Color.web("#e8ede5"));
+     rectangulo19.setRotate(-55);
+     
+     Rectangle rectangulo20 = new Rectangle();
+     rectangulo20.setX(1243);
+     rectangulo20.setY(127);
+     rectangulo20.setWidth(14);
+     rectangulo20.setHeight(32);
+     rectangulo20.setFill(Color.web("#e8ede5"));
+     rectangulo20.setRotate(-53);
+     
+     Rectangle rectangulo21 = new Rectangle();
+     rectangulo21.setX(24);
+     rectangulo21.setY(-16);
+     rectangulo21.setWidth(25);
+     rectangulo21.setHeight(120);
+     rectangulo21.setFill(Color.web("#e8ede5"));
+     rectangulo21.setRotate(-53);
+     
+     Rectangle rectangulo22 = new Rectangle();
+     rectangulo22.setX(-19);
+     rectangulo22.setY(-25);
+     rectangulo22.setWidth(32);
+     rectangulo22.setHeight(120);
+     rectangulo22.setFill(Color.web("#e8ede5"));
+     rectangulo22.setRotate(-45);
+     
+     Rectangle rectangulo23 = new Rectangle();
+     rectangulo23.setX(-19);
+     rectangulo23.setY(23);
+     rectangulo23.setWidth(32);
+     rectangulo23.setHeight(80);
+     rectangulo23.setFill(Color.web("#e8ede5"));
+     rectangulo23.setRotate(25);
+     
+     Rectangle rectangulo24 = new Rectangle();
+     rectangulo24.setX(49.5);
+     rectangulo24.setY(62);
+     rectangulo24.setWidth(38);
+     rectangulo24.setHeight(25);
+     rectangulo24.setFill(Color.web("#e8ede5"));
+     rectangulo24.setRotate(49);
+     
+     Rectangle rectangulo25 = new Rectangle();
+     rectangulo25.setX(73);
+     rectangulo25.setY(65);
+     rectangulo25.setWidth(20);
+     rectangulo25.setHeight(25);
+     rectangulo25.setFill(Color.web("#e8ede5"));
+     rectangulo25.setRotate(49);
+     
+     Rectangle rectangulo26 = new Rectangle();
+     rectangulo26.setX(545);
+     rectangulo26.setY(95);
+     rectangulo26.setWidth(40);
+     rectangulo26.setHeight(142);
+     rectangulo26.setFill(Color.web("#e8ede5"));
+     rectangulo26.setRotate(45);
+     
+     Rectangle rectangulo27 = new Rectangle();
+     rectangulo27.setX(572);
+     rectangulo27.setY(125);
+     rectangulo27.setWidth(55);
+     rectangulo27.setHeight(110);
+     rectangulo27.setFill(Color.web("#e8ede5"));
+     rectangulo27.setRotate(45);
     
+     Rectangle rectangulo28 = new Rectangle();
+     rectangulo28.setX(647);
+     rectangulo28.setY(134);
+     rectangulo28.setWidth(35);
+     rectangulo28.setHeight(110);
+     rectangulo28.setFill(Color.web("#e8ede5"));
+     rectangulo28.setRotate(-43);
+     
+     Rectangle rectangulo29 = new Rectangle();
+     rectangulo29.setX(646);
+     rectangulo29.setY(166);
+     rectangulo29.setWidth(35);
+     rectangulo29.setHeight(80);
+     rectangulo29.setFill(Color.web("#e8ede5"));
+     rectangulo29.setRotate(-32);
+     
+     Rectangle rectangulo30 = new Rectangle();
+     rectangulo30.setX(590);
+     rectangulo30.setY(158);
+     rectangulo30.setWidth(35);
+     rectangulo30.setHeight(80);
+     rectangulo30.setFill(Color.web("#e8ede5"));
+     rectangulo30.setRotate(57);
+     
+     Rectangle rectangulo31 = new Rectangle();
+     rectangulo31.setX(697);
+     rectangulo31.setY(210);
+     rectangulo31.setWidth(15);
+     rectangulo31.setHeight(20);
+     rectangulo31.setFill(Color.web("#e8ede5"));
+     rectangulo31.setRotate(57);
+     
+     Rectangle rectangulo32 = new Rectangle(800,210,15,20);
+     rectangulo32.setFill(Color.web("#FF0000"));
+     rectangulo32.setRotate(57);
+     
+     
+     
+     
+     
      
      //agregar al fondo
      //aqui depende del orden que se coloque va hacia el fondo o adelante
@@ -469,7 +596,31 @@ public class Lapiz {
      this.anchor.getChildren().add(rectangulo14);
      this.anchor.getChildren().add(rectangulo15);
      this.anchor.getChildren().add(rectangulo16);
-     //this.anchor.getChildren().add(rectangulo17);
+     this.anchor.getChildren().add(rectangulo17);
+     this.anchor.getChildren().add(rectangulo18);
+     this.anchor.getChildren().add(rectangulo19);
+     this.anchor.getChildren().add(rectangulo20);
+     this.anchor.getChildren().add(rectangulo21);
+     this.anchor.getChildren().add(rectangulo22);
+     this.anchor.getChildren().add(rectangulo23);
+     this.anchor.getChildren().add(rectangulo24);
+     this.anchor.getChildren().add(rectangulo25);
+     this.anchor.getChildren().add(rectangulo26);
+     this.anchor.getChildren().add(rectangulo27);
+     this.anchor.getChildren().add(rectangulo28);
+     this.anchor.getChildren().add(rectangulo29);
+     this.anchor.getChildren().add(rectangulo30);
+     this.anchor.getChildren().add(rectangulo31);
+     this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
+     //this.anchor.getChildren().add(rectangulo32);
      this.anchor.getChildren().add(line);
      this.anchor.getChildren().add(line1);
      this.anchor.getChildren().add(line2);
