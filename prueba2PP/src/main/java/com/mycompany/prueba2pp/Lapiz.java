@@ -618,8 +618,17 @@ public class Lapiz {
      rectangulo43.setFill(Color.web("#e8ede5"));
      rectangulo43.setRotate(75);
      
-
+     Rectangle rectangulo44 = new Rectangle(0,600,1920,1920);
+     rectangulo44.setFill(Color.web("#0C8527"));
+     rectangulo44.setRotate(90);
      
+     Rectangle rectangulo45 = new Rectangle(0,650,1920,1920);
+     rectangulo45.setFill(Color.web("#1DB23B"));
+     rectangulo45.setRotate(90);
+     
+     Rectangle rectangulo46 = new Rectangle(0,750,1920,1920);
+     rectangulo46.setFill(Color.web("#829085"));
+     rectangulo46.setRotate(90);
      
      Polygon poly = new Polygon();
      poly.getPoints().addAll(new Double[] {1525.0,102.0,1477.0,168.0,1520.0,198.0,1550.0,178.0,1590.0,207.0,1602.0,188.0});
@@ -628,25 +637,99 @@ public class Lapiz {
      Polygon poly1 = new Polygon();
      poly1.getPoints().addAll(new Double[] {1930.0,115.0, 1820.0,170.0,1870.0,190.0, 1900.0, 158.0,1920.0,190.0});
      poly1.setFill(Color.web("#e8ede5"));
-
      
+     Polygon poly2 = new Polygon();
+     poly2.getPoints().addAll(new Double[] {0.0,0.0,400.0,300.0,600.0,100.0,700.0,200.0,1000.0,100.0,1183.0,158.0,1300.0,100.0,1450.0,200.0,1525.0,100.0,1665.0,250.0,1920.0,120.0,1920.0,-100.0});
+     poly2.setFill(Color.web("#AABDD8"));
+     
+     //sol
+     Circle circulo1 = new Circle(950,100,40);
+     circulo1.setFill(Color.YELLOW);
+     circulo1.opacityProperty().set(1);
+     
+     //nubes
+     Circle circulo2 = new Circle(750,100,40);
+     circulo2.setFill(Color.WHITE);
+     circulo2.opacityProperty().set(1);
+
+     Circle circulo3 = new Circle(710,100,30);
+     circulo3.setFill(Color.WHITE);
+     circulo3.opacityProperty().set(1);
+     
+     Circle circulo4 = new Circle(740,100,40);
+     circulo4.setFill(Color.WHITE);
+     circulo4.opacityProperty().set(1);
+     
+     Circle circulo5 = new Circle(770,100,50);
+     circulo5.setFill(Color.WHITE);
+     circulo5.opacityProperty().set(1);
+     
+     Circle circulo6 = new Circle(810,100,45);
+     circulo6.setFill(Color.WHITE);
+     circulo6.opacityProperty().set(1);
+     
+     Circle circulo7 = new Circle(830,100,35);
+     circulo7.setFill(Color.WHITE);
+     circulo7.opacityProperty().set(1);
+     
+     Circle circulo8 = new Circle(850,105,20);
+     circulo8.setFill(Color.WHITE);
+     circulo8.opacityProperty().set(1);
+     
+     //nube 2
+     Circle circulo9 = new Circle(1480,100,60);
+     circulo9.setFill(Color.WHITE);
+     circulo9.opacityProperty().set(1);
+     
+     Circle circulo10 = new Circle(1540,100,50);
+     circulo10.setFill(Color.WHITE);
+     circulo10.opacityProperty().set(1);
+     
+     Circle circulo11 = new Circle(1510,80,50);
+     circulo11.setFill(Color.WHITE);
+     circulo11.opacityProperty().set(1);
+     
+     Circle circulo12 = new Circle(1430,120,50);
+     circulo12.setFill(Color.WHITE);
+     circulo12.opacityProperty().set(1);
+     
+     Circle circulo13 = new Circle(1400,120,35);
+     circulo13.setFill(Color.WHITE);
+     circulo13.opacityProperty().set(1);
+     
+     Circle circulo14 = new Circle(1380,120,22);
+     circulo14.setFill(Color.WHITE);
+     circulo14.opacityProperty().set(1);
+     
+     Circle circulo15 = new Circle(1570,110,35);
+     circulo15.setFill(Color.WHITE);
+     circulo15.opacityProperty().set(1);
+     
+     Circle circulo16 = new Circle(1600,110,22);
+     circulo16.setFill(Color.WHITE);
+     circulo16.opacityProperty().set(1);
+     
+     Circle circulo17 = new Circle(1600,110,22);
+     circulo17.setFill(Color.WHITE);
+     circulo17.opacityProperty().set(1);
      //agregar al fondo
      //aqui depende del orden que se coloque va hacia el fondo o adelante
+     
      this.anchor.getChildren().add(rectangulo1);
      this.anchor.getChildren().add(rectangulo2);
      this.anchor.getChildren().add(rectangulo3);
+     
+
+     //detras de las montanas
+
+     
      this.anchor.getChildren().add(rectangulo4);
+     
+    
      this.anchor.getChildren().add(rectangulo5);
-     this.anchor.getChildren().add(rectangulo6);
-     this.anchor.getChildren().add(rectangulo7);
-     this.anchor.getChildren().add(rectangulo8);
-     this.anchor.getChildren().add(rectangulo9);
-     this.anchor.getChildren().add(rectangulo10);
-     this.anchor.getChildren().add(rectangulo11);
-     this.anchor.getChildren().add(rectangulo12);
-     this.anchor.getChildren().add(rectangulo13);
-     this.anchor.getChildren().add(rectangulo14);
-     this.anchor.getChildren().add(rectangulo15);
+     this.anchor.getChildren().add(poly2);
+     this.anchor.getChildren().add(circulo1);
+
      this.anchor.getChildren().add(rectangulo16);
      this.anchor.getChildren().add(rectangulo17);
      this.anchor.getChildren().add(rectangulo18);
@@ -655,6 +738,7 @@ public class Lapiz {
      this.anchor.getChildren().add(rectangulo21);
      this.anchor.getChildren().add(rectangulo22);
      this.anchor.getChildren().add(rectangulo23);
+   
      this.anchor.getChildren().add(rectangulo24);
      this.anchor.getChildren().add(rectangulo25);
      this.anchor.getChildren().add(rectangulo26);
@@ -675,10 +759,14 @@ public class Lapiz {
      this.anchor.getChildren().add(rectangulo41);
      this.anchor.getChildren().add(rectangulo42);
      this.anchor.getChildren().add(rectangulo43);
-     //this.anchor.getChildren().add(rectangulo45);
-     //this.anchor.getChildren().add(rectangulo46);
+     this.anchor.getChildren().add(rectangulo44);
+     this.anchor.getChildren().add(rectangulo45);
+     this.anchor.getChildren().add(rectangulo46);
      this.anchor.getChildren().add(poly);
      this.anchor.getChildren().add(poly1);
+     
+
+     
      this.anchor.getChildren().add(line);
      this.anchor.getChildren().add(line1);
      this.anchor.getChildren().add(line2);
@@ -719,7 +807,26 @@ public class Lapiz {
      this.anchor.getChildren().add(line37);
      this.anchor.getChildren().add(line38);
      this.anchor.getChildren().add(line39);
-     
+     this.anchor.getChildren().add(circulo2);
+     this.anchor.getChildren().add(circulo3);
+     this.anchor.getChildren().add(circulo4);
+     this.anchor.getChildren().add(circulo5);
+     this.anchor.getChildren().add(circulo6);
+     this.anchor.getChildren().add(circulo7);
+     this.anchor.getChildren().add(circulo8);
+     this.anchor.getChildren().add(circulo9);
+     this.anchor.getChildren().add(circulo10);
+     this.anchor.getChildren().add(circulo11);
+     this.anchor.getChildren().add(circulo12);
+     this.anchor.getChildren().add(circulo13);
+     this.anchor.getChildren().add(circulo14);
+     this.anchor.getChildren().add(circulo15);
+     this.anchor.getChildren().add(circulo16);
+     //this.anchor.getChildren().add(circulo17);
+     //this.anchor.getChildren().add(circulo18);
+     //this.anchor.getChildren().add(circulo19);
+
+
 
      
      
