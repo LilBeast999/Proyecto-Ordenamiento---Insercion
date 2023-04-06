@@ -52,9 +52,16 @@ public class App extends Application {
         Lapiz lapiz= new Lapiz(anchor);
         
         anchor=lapiz.dibujarfondo();
+        anchor=lapiz.dibujargrua();
+        
+        
        
-        Label etiqueta = new Label(arreglo.toString());
-        anchor.getChildren().add(etiqueta);
+        
+        
+        
+        
+        
+
         
         ArrayList <Rectangle> rectangulos = new ArrayList();
         ArrayList <Text> valores = new ArrayList();
@@ -79,10 +86,6 @@ public class App extends Application {
       
         
         stage.setScene(scena);
-      
-        
-
-        
         stage.show();
     }
 

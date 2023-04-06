@@ -712,6 +712,10 @@ public class Lapiz {
      Circle circulo17 = new Circle(1600,110,22);
      circulo17.setFill(Color.WHITE);
      circulo17.opacityProperty().set(1);
+     
+     // Grua
+     
+     
      //agregar al fondo
      //aqui depende del orden que se coloque va hacia el fondo o adelante
      
@@ -838,8 +842,72 @@ public class Lapiz {
     
     }
     
-     public void dibujargrua(){
-    
+     public AnchorPane dibujargrua(){
+         int x,y;
+         
+         Rectangle rectangulo1= new Rectangle(25,460,100,450);
+         rectangulo1.setRotate(0);
+         rectangulo1.setFill(Color.ORANGE);
+         rectangulo1.setStroke(Color.BLACK);
+     
+         Rectangle rectangulo2= new Rectangle(50,375,20,100);
+         rectangulo2.setRotate(30);
+         rectangulo2.setFill(Color.ORANGE);
+         rectangulo2.setStroke(Color.BLACK);
+         
+         Rectangle rectangulo3= new Rectangle(85,375,20,100);
+         rectangulo3.setRotate(-35);
+         rectangulo3.setFill(Color.ORANGE);
+         rectangulo3.setStroke(Color.BLACK);
+         
+         Rectangle rectangulo4 = new Rectangle(905,-485,30,1750);
+         rectangulo4.setRotate(90);
+         rectangulo4.setFill(Color.ORANGE);
+         rectangulo4.setStroke(Color.BLACK);
+         
+         Rectangle rectangulo5 = new Rectangle(940,-378,25,1700);
+         rectangulo5.setRotate(90);
+         rectangulo5.setFill(Color.ORANGE);
+         rectangulo5.setStroke(Color.BLACK);
+         
+         Circle circulo1 = new Circle(72,390,7);
+         circulo1.setFill(Color.GRAY);
+         circulo1.setStroke(Color.BLACK);
+         
+         Circle circulo2 = new Circle(1772,390,7);
+         circulo2.setFill(Color.GRAY);
+         circulo2.setStroke(Color.BLACK);
+         
+         Rectangle rectangulo6= new Rectangle(1725,460,100,450);
+         rectangulo6.setRotate(0);
+         rectangulo6.setFill(Color.ORANGE);
+         rectangulo6.setStroke(Color.BLACK);
+         
+         Rectangle rectangulo7= new Rectangle(1742,374,20,100);
+         rectangulo7.setRotate(35);
+         rectangulo7.setFill(Color.ORANGE);
+         rectangulo7.setStroke(Color.BLACK);
+         
+         Rectangle rectangulo8= new Rectangle(1778,375,20,100);
+         rectangulo8.setRotate(-35);
+         rectangulo8.setFill(Color.ORANGE);
+         rectangulo8.setStroke(Color.BLACK);
+         
+         this.anchor.getChildren().add(rectangulo5);
+         this.anchor.getChildren().add(rectangulo3);
+         this.anchor.getChildren().add(rectangulo2);  
+         this.anchor.getChildren().add(rectangulo1);
+         
+         this.anchor.getChildren().add(rectangulo7);
+         this.anchor.getChildren().add(rectangulo8);
+         this.anchor.getChildren().add(rectangulo6);
+         this.anchor.getChildren().add(rectangulo4);
+         
+          
+         this.anchor.getChildren().add(circulo1);
+         this.anchor.getChildren().add(circulo2);
+         return this.anchor;
+       
     }
      
     public void dibujar1(){
