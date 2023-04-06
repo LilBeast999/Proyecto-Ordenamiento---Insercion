@@ -3,31 +3,22 @@ package com.mycompany.prueba2pp;
 import java.util.ArrayList;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import static javafx.scene.paint.Color.color;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
 import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
-import javafx.animation.AnimationTimer;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.animation.SequentialTransition;
 import javafx.scene.text.*;
-
-
-
+import javafx.scene.paint.Color;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
-
+private static final int TIEMPO_ESPERA = 1000; // 1 segundo
     @Override
     public void start(Stage stage) {
         AnchorPane anchor = new AnchorPane();
@@ -44,10 +35,14 @@ public class App extends Application {
         for (int i=0; i<18; i++){
             arreglo.add( (int)Math.floor(Math.random()*(99-1+1)+1));
         }
+        Label[] etiquetasCodigo = {
+                new Label("1. Para i = 1 hasta n-1 hacer:"),
+                new Label("2.     j = i"),
+                new Label("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
+                new Label("4.         intercambiar A[j] y A[j-1]"),
+                new Label("5.         j = j - 1")
+        };
         
-        for (int i=0; i<18; i++){
-            System.out.println(arreglo.get(i)+ " ");
-        }
         
         Lapiz lapiz= new Lapiz(anchor);
         
