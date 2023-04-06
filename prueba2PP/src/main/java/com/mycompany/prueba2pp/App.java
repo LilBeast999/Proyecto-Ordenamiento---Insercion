@@ -11,6 +11,7 @@ import javafx.scene.shape.*;
 import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
 import javafx.animation.SequentialTransition;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.*;
 import javafx.scene.paint.Color;
 
@@ -42,7 +43,10 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
                 new Label("4.         intercambiar A[j] y A[j-1]"),
                 new Label("5.         j = j - 1")
         };
-        
+        Label etiquetaArreglo = new Label(arrayToString(arreglo));
+        VBox root = new VBox(10);
+        root.getChildren().addAll(etiquetasCodigo);
+        root.getChildren().add(etiquetaArreglo);
         
         Lapiz lapiz= new Lapiz(anchor);
         
@@ -180,5 +184,7 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
     public static void main(String[] args) {
         launch();
     }
+
+    
     
 }
