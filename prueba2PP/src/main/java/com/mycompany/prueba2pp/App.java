@@ -18,6 +18,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.animation.SequentialTransition;
+import javafx.scene.control.Button;
 import javafx.scene.text.*;
 
 
@@ -50,9 +51,15 @@ public class App extends Application {
         }
         
         Lapiz lapiz= new Lapiz(anchor);
-        
+        AnchorPane caja = new AnchorPane();
         anchor=lapiz.dibujarfondo();
         anchor=lapiz.dibujargrua();
+        caja.setLayoutX(600);
+        caja.setLayoutY(600);
+        caja.setPrefSize(60, 60);
+        
+        caja.setStyle("-fx-background-color: #FF0000;");
+        anchor.getChildren().add(caja);
         
         
        
