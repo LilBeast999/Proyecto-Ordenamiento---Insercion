@@ -36,17 +36,9 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
         for (int i=0; i<18; i++){
             arreglo.add( (int)Math.floor(Math.random()*(99-1+1)+1));
         }
-        Label[] etiquetasCodigo = {
-                new Label("1. Para i = 1 hasta n-1 hacer:"),
-                new Label("2.     j = i"),
-                new Label("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
-                new Label("4.         intercambiar A[j] y A[j-1]"),
-                new Label("5.         j = j - 1")
-        };
-        Label etiquetaArreglo = new Label(arrayToString(arreglo));
-        VBox root = new VBox(10);
-        root.getChildren().addAll(etiquetasCodigo);
-        root.getChildren().add(etiquetaArreglo);
+        
+   
+   
         
         Lapiz lapiz= new Lapiz(anchor);
         
@@ -180,7 +172,13 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
         System.out.println("]");
     
     }
-
+    public AnchorPane Pseudocodigo(AnchorPane Anchor) {
+    
+    
+    
+    
+    return Anchor; 
+    }
     public static void main(String[] args) {
         launch();
     }

@@ -2,11 +2,11 @@ package com.mycompany.prueba2pp;
 import javafx.application.Application;
 import javafx.concurrent.Task;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.util.Random;
+import javafx.scene.text.Text;
 
 
  
@@ -18,15 +18,15 @@ public class InsercionDirectaPrueba extends Application {
     public void start(Stage primaryStage) {
         int[] arreglo =generarArregloAleatorio(9,1,100);
         
-        Label[] etiquetasCodigo = {
-                new Label("1. Para i = 1 hasta n-1 hacer:"),
-                new Label("2.     j = i"),
-                new Label("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
-                new Label("4.         intercambiar A[j] y A[j-1]"),
-                new Label("5.         j = j - 1")
+        Text[] etiquetasCodigo = {
+                new Text("1. Para i = 1 hasta n-1 hacer:"),
+                new Text("2.     j = i"),
+                new Text("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
+                new Text("4.         intercambiar A[j] y A[j-1]"),
+                new Text("5.         j = j - 1")
         };
-        
-        Label etiquetaArreglo = new Label(arrayToString(arreglo));
+     
+       Text etiquetaArreglo = new Text(arrayToString(arreglo));
         
         VBox root = new VBox(10);
         root.getChildren().addAll(etiquetasCodigo);
@@ -88,12 +88,12 @@ public class InsercionDirectaPrueba extends Application {
         }
         return arreglo;
     }
-    private void resaltarLineaCodigo(Label[] etiquetasCodigo, int indiceLinea) {
+    private void resaltarLineaCodigo(Text[] etiquetasCodigo, int indiceLinea) {
         for (int i = 0; i < etiquetasCodigo.length; i++) {
             if (i == indiceLinea) {
-                etiquetasCodigo[i].setTextFill(Color.RED);
+                etiquetasCodigo[i].setFill(Color.RED);
 } else {
-etiquetasCodigo[i].setTextFill(Color.BLACK);
+etiquetasCodigo[i].setFill(Color.BLACK);
 }
 }
 }
