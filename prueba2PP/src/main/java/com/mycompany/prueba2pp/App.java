@@ -41,6 +41,11 @@ public class App extends Application {
 
         // apartir de aca OJO
         ArrayList <Integer> arreglo = new ArrayList();
+        Almacen almacen = new Almacen(0,0);
+        System.out.println("Probando la herencia");
+        System.out.println("la posicion x es: "+almacen.getPosicionx());
+        
+        
         
         for (int i=0; i<18; i++){
             arreglo.add( (int)Math.floor(Math.random()*(99-1+1)+1));
@@ -55,10 +60,11 @@ public class App extends Application {
         anchor=lapiz.dibujarfondo();
         anchor=lapiz.dibujargrua();
         caja.setLayoutX(600);
-        caja.setLayoutY(600);
+        caja.setLayoutY(800);
         caja.setPrefSize(60, 60);
         
-        caja.setStyle("-fx-background-color: #FF0000;");
+        caja.setStyle("-fx-background-color: #533E00;");
+        
         anchor.getChildren().add(caja);
         
         
