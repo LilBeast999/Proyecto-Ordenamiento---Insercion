@@ -1,5 +1,4 @@
 package com.mycompany.prueba2pp;
-
 import javafx.application.Application;
 import javafx.concurrent.Task;
 import javafx.scene.Scene;
@@ -7,14 +6,17 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import java.util.Random;
 
+
+ 
 public class InsercionDirectaPrueba extends Application {
     
     private static final int TIEMPO_ESPERA = 1000; // 1 segundo
     
     @Override
     public void start(Stage primaryStage) {
-        int[] arreglo = { 5, 1, 9, 3, 7, 2, 8, 4, 6 };
+        int[] arreglo =generarArregloAleatorio(9,1,100);
         
         Label[] etiquetasCodigo = {
                 new Label("1. Para i = 1 hasta n-1 hacer:"),
@@ -78,7 +80,14 @@ public class InsercionDirectaPrueba extends Application {
         thread.setDaemon(true);
         thread.start();
     }
-    
+     private int[] generarArregloAleatorio(int n, int min, int max) {
+        Random random = new Random();
+        int[] arreglo = new int[n];
+        for (int i = 0; i < n; i++) {
+            arreglo[i] = random.nextInt(max - min + 1) + min;
+        }
+        return arreglo;
+    }
     private void resaltarLineaCodigo(Label[] etiquetasCodigo, int indiceLinea) {
         for (int i = 0; i < etiquetasCodigo.length; i++) {
             if (i == indiceLinea) {
@@ -105,4 +114,3 @@ public static void main(String[] args) {
     launch(args);
 }
 }
-    
