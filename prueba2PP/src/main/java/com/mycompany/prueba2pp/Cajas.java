@@ -12,7 +12,8 @@ public class Cajas {
     int peso;
     int posicionx,posiciony;
         
-    public Cajas() {
+    public Cajas(int peso) {
+        this.peso=peso;
     }
     
     public int getPeso(){

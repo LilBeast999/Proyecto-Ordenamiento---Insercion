@@ -44,8 +44,13 @@ public class App extends Application {
         Almacen almacen = new Almacen(0,0);
         System.out.println("Probando la herencia");
         System.out.println("la posicion x es: "+almacen.getPosicionx());
+        int numerodecajas=16;
         
+        for(int i=0;i<numerodecajas;i++){
+            Cajas caja = new Cajas((int)Math.floor(Math.random()*(99-1+1)+1));
+            almacen.cajas.add(caja);
         
+        }
         
         for (int i=0; i<18; i++){
             arreglo.add( (int)Math.floor(Math.random()*(99-1+1)+1));
@@ -53,6 +58,10 @@ public class App extends Application {
         
         for (int i=0; i<18; i++){
             System.out.println(arreglo.get(i)+ " ");
+        }
+        
+        for (int i=0; i<numerodecajas; i++){
+            System.out.println(almacen.cajas.get(i).peso+ " esto son los atributos de las cajas");
         }
         
         Lapiz lapiz= new Lapiz(anchor);
