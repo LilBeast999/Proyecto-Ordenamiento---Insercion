@@ -37,7 +37,7 @@ public class App extends Application {
         stage.setWidth(1024);
         stage.setHeight(768);
         scena.setFill(Color.web("#AABDD8"));
-        
+        stage.setMaximized(true);
 
         // apartir de aca OJO
         ArrayList <Integer> arreglo = new ArrayList();
@@ -59,13 +59,14 @@ public class App extends Application {
         AnchorPane caja = new AnchorPane();
         anchor=lapiz.dibujarfondo();
         anchor=lapiz.dibujargrua();
-        caja.setLayoutX(600);
-        caja.setLayoutY(800);
-        caja.setPrefSize(60, 60);
+        //caja.setLayoutX(600);
+        //caja.setLayoutY(800);
+        //caja.setPrefSize(60, 60);
+        anchor=almacen.dibujarcaja(600, 800, anchor);
         
-        caja.setStyle("-fx-background-color: #533E00;");
+        //aja.setStyle("-fx-background-color: #533E00;");
         
-        anchor.getChildren().add(caja);
+        //anchor.getChildren().add(caja);
         
         
        
