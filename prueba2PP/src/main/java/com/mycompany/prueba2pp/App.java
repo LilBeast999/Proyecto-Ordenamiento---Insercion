@@ -18,6 +18,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.animation.SequentialTransition;
+import javafx.scene.control.Button;
 import javafx.scene.text.*;
 
 
@@ -36,10 +37,20 @@ public class App extends Application {
         stage.setWidth(1024);
         stage.setHeight(768);
         scena.setFill(Color.web("#AABDD8"));
-        
+        stage.setMaximized(true);
 
         // apartir de aca OJO
         ArrayList <Integer> arreglo = new ArrayList();
+        Almacen almacen = new Almacen(0,0);
+        System.out.println("Probando la herencia");
+        System.out.println("la posicion x es: "+almacen.getPosicionx());
+        int numerodecajas=16;
+        
+        for(int i=0;i<numerodecajas;i++){
+            Cajas caja = new Cajas((int)Math.floor(Math.random()*(99-1+1)+1));
+            almacen.cajas.add(caja);
+        
+        }
         
         for (int i=0; i<18; i++){
             arreglo.add( (int)Math.floor(Math.random()*(99-1+1)+1));
@@ -49,12 +60,32 @@ public class App extends Application {
             System.out.println(arreglo.get(i)+ " ");
         }
         
-        Lapiz lapiz= new Lapiz(anchor);
+        for (int i=0; i<numerodecajas; i++){
+            System.out.println(almacen.cajas.get(i).peso+ " esto son los atributos de las cajas");
+        }
         
+        Lapiz lapiz= new Lapiz(anchor);
+        AnchorPane caja = new AnchorPane();
         anchor=lapiz.dibujarfondo();
+        anchor=lapiz.dibujargrua();
+        //caja.setLayoutX(600);
+        //caja.setLayoutY(800);
+        //caja.setPrefSize(60, 60);
+        anchor=almacen.dibujarcaja(600, 400, anchor);
        
-        Label etiqueta = new Label(arreglo.toString());
-        anchor.getChildren().add(etiqueta);
+        
+        //aja.setStyle("-fx-background-color: #533E00;");
+        
+        //anchor.getChildren().add(caja);
+        
+        
+       
+        
+        
+        
+        
+        
+
         
         ArrayList <Rectangle> rectangulos = new ArrayList();
         ArrayList <Text> valores = new ArrayList();
@@ -79,10 +110,6 @@ public class App extends Application {
       
         
         stage.setScene(scena);
-      
-        
-
-        
         stage.show();
     }
 
