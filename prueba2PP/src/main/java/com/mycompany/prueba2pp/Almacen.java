@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.*;
 
 /**
  *
  * @author gusta
  */
 public class Almacen extends Lapiz {
-    ArrayList <Cajas> cajas= new ArrayList();
+    ArrayList <Caja> cajas= new ArrayList();
 
     public Almacen(int posicionx, int posiciony) {
         super(posicionx, posiciony);
@@ -41,26 +42,31 @@ public class Almacen extends Lapiz {
         return anchor;
     }
 
-   public AnchorPane dibujarcaja (int posx,int posy, AnchorPane anchor){
-      AnchorPane caja= new AnchorPane();
-      caja.setLayoutX(posx);
-      caja.setLayoutY(posy);
-      caja.setPrefSize(60, 60);
-      Rectangle rectangulo= new Rectangle(60,60);
-      rectangulo.setFill(Color.web("#784A32"));
-      rectangulo.setStroke(Color.BLACK);
-      rectangulo.setStrokeWidth(2);
-      Rectangle rectangulo1= new Rectangle(7.5,7.5,45,45);
-      rectangulo1.setFill(Color.web("#A46644"));
-      rectangulo1.setStroke(Color.BLACK);
-      rectangulo1.setStrokeWidth(1);
-      caja.getChildren().add(rectangulo);
-      caja.getChildren().add(rectangulo1);
-      caja=dibujar1(caja);
+    public AnchorPane dibujarcaja (int posx,int posy, AnchorPane anchor, ArrayList <Caja> cajas, int indiceCaja){
+        AnchorPane caja= new AnchorPane();
+        caja.setLayoutX(posx);
+        caja.setLayoutY(posy);
+        caja.setPrefSize(60, 60);
+        Rectangle rectangulo= new Rectangle(60,60);
+        rectangulo.setFill(Color.web("#784A32"));
+        rectangulo.setStroke(Color.BLACK);
+        rectangulo.setStrokeWidth(2);
+        Rectangle rectangulo1= new Rectangle(7.5,7.5,45,45);
+        rectangulo1.setFill(Color.web("#A46644"));
+        rectangulo1.setStroke(Color.BLACK);
+        rectangulo1.setStrokeWidth(1);
+        caja.getChildren().add(rectangulo);
+        caja.getChildren().add(rectangulo1);
+        //caja=dibujar1(caja);
+        Text numero = new Text(25,30,Integer.toString(cajas.get(indiceCaja).peso));
+        numero.scaleXProperty().set(2.5);
+        numero.scaleYProperty().set(2.5);
+        caja.getChildren().add(numero);
+        
       
-      anchor.getChildren().add(caja);
+        anchor.getChildren().add(caja);
        
-     return anchor;
+        return anchor;
    }
     
    

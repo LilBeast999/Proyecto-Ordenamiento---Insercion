@@ -44,12 +44,23 @@ public class App extends Application {
         Almacen almacen = new Almacen(0,0);
         System.out.println("Probando la herencia");
         System.out.println("la posicion x es: "+almacen.getPosicionx());
-        int numerodecajas=16;
+        int numerodecajas=18;
+        
+        
+        Lapiz lapiz= new Lapiz(anchor);
+        //AnchorPane caja = new AnchorPane();
+        anchor=lapiz.dibujarfondo();
+        anchor=lapiz.dibujargrua();
+        //caja.setLayoutX(600);
+        //caja.setLayoutY(800);
+        //caja.setPrefSize(60, 60);
+        
+        //anchor.getChildren().add(caja);
         
         for(int i=0;i<numerodecajas;i++){
-            Cajas caja = new Cajas((int)Math.floor(Math.random()*(99-1+1)+1));
+            Caja caja = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
             almacen.cajas.add(caja);
-        
+            almacen.dibujarcaja(200+(80*i),850, anchor,almacen.cajas,i);
         }
         
         for (int i=0; i<18; i++){
@@ -64,36 +75,15 @@ public class App extends Application {
             System.out.println(almacen.cajas.get(i).peso+ " esto son los atributos de las cajas");
         }
         
-        Lapiz lapiz= new Lapiz(anchor);
-        AnchorPane caja = new AnchorPane();
-        anchor=lapiz.dibujarfondo();
-        anchor=lapiz.dibujargrua();
-        //caja.setLayoutX(600);
-        //caja.setLayoutY(800);
-        //caja.setPrefSize(60, 60);
-        anchor=almacen.dibujarcaja(600, 400, anchor);
-       
-        
-        //aja.setStyle("-fx-background-color: #533E00;");
-        
-        //anchor.getChildren().add(caja);
-        
-        
-       
-        
-        
-        
-        
-        
-
-        
         ArrayList <Rectangle> rectangulos = new ArrayList();
         ArrayList <Text> valores = new ArrayList();
        
         Text numero = new Text(100,100,Integer.toString(arreglo.get(0)));
         //anchor.getChildren().add(numero);
         
-        for (int i = 0; i < arreglo.size(); i++) {
+        
+        
+        /*for (int i = 0; i < arreglo.size(); i++) {
             Rectangle rectangulo = new Rectangle(200+(80*i),850,60,60); 
             rectangulos.add(rectangulo);
             rectangulo.setFill(Color.BROWN);
@@ -104,16 +94,17 @@ public class App extends Application {
             valor.setFill(Color.WHITE);
             valores.add(valor);
             anchor.getChildren().add(valor);
-        }
+        }*/
         
-        Ordenamiento(arreglo,valores,rectangulos);
+        //Ordenamiento(arreglo,valores,rectangulos);
+        
       
         
         stage.setScene(scena);
         stage.show();
     }
 
-    public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<Text>valores, ArrayList<Rectangle>rectangulos){
+    public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<Text>valores, ArrayList<Rectangle>rectangulos, ArrayList<Caja>cajas){
             System.out.print("--->  ");
             imprimeArreglo(arreglo);
             int velocidad = 400 ;
