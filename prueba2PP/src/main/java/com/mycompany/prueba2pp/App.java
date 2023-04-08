@@ -71,7 +71,8 @@ public class App extends Application {
         //caja.setLayoutX(600);
         //caja.setLayoutY(800);
         //caja.setPrefSize(60, 60);
-        anchor=almacen.dibujarcaja(600, 800, anchor);
+        anchor=almacen.dibujarcaja(600, 400, anchor);
+       
         
         //aja.setStyle("-fx-background-color: #533E00;");
         

@@ -4,6 +4,7 @@
  */
 package com.mycompany.prueba2pp;
 
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -893,8 +894,25 @@ public class Lapiz {
          rectangulo8.setFill(Color.ORANGE);
          rectangulo8.setStroke(Color.BLACK);
          
+         Line line1=new Line();
+         line1.setStartX(100);
+         line1.setStartY(420);
+         line1.setEndX(1750);
+         line1.setEndY(420);
+         line1.setStrokeWidth(5);
+         
+         Line line2=new Line();
+         line2.setStartX(100);
+         line2.setStartY(440);
+         line2.setEndX(1750);
+         line2.setEndY(440);
+         line2.setStrokeWidth(5);
+         
+         this.anchor.getChildren().add(line1);
+         this.anchor.getChildren().add(line2);
          this.anchor.getChildren().add(rectangulo5);
          this.anchor.getChildren().add(rectangulo3);
+         
          this.anchor.getChildren().add(rectangulo2);  
          this.anchor.getChildren().add(rectangulo1);
          
@@ -906,11 +924,36 @@ public class Lapiz {
           
          this.anchor.getChildren().add(circulo1);
          this.anchor.getChildren().add(circulo2);
+       
          return this.anchor;
        
     }
      
-    public void dibujar1(){
+    public AnchorPane dibujar0(AnchorPane Panecaja){
+        Rectangle cero1 = new Rectangle(5, 0, 40, 10); 
+        cero1.setFill(Color.BLACK); 
+        Rectangle cero2 = new Rectangle(5, 0, 10, 60); 
+        cero2.setFill(Color.BLACK); 
+        Rectangle cero3 = new Rectangle(5, 50, 40, 10); 
+        cero3.setFill(Color.BLACK); 
+        Rectangle cero4 = new Rectangle(45, 0, 10, 60); 
+        cero4.setFill(Color.BLACK); 
+        Group grupo= new Group(cero1,cero2,cero3,cero4);
+        grupo.setScaleX(0.3);
+        grupo.setScaleY(0.3);
+        Panecaja.getChildren().add(grupo); 
+       
+      return Panecaja; 
+    } 
+     
+    public AnchorPane dibujar1(AnchorPane Panecaja){  
+        Rectangle uno1 = new Rectangle(25, 0, 10, 60); 
+        uno1.setFill(Color.BLACK);
+        uno1.setScaleX(0.5);
+        uno1.setScaleY(0.5);
+        Panecaja.getChildren().add(uno1); 
+        
+        return Panecaja;     
     
     } 
     
