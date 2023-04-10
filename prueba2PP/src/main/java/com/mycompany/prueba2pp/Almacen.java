@@ -36,7 +36,7 @@ public class Almacen extends Lapiz {
         this.posiciony = posiciony;
     }
 
-    public AnchorPane getAnchor(AnchorPane anchor) {
+    public AnchorPane getAnchor() {
         
         return anchor;
     }
@@ -56,11 +56,23 @@ public class Almacen extends Lapiz {
       rectangulo1.setStrokeWidth(1);
       caja.getChildren().add(rectangulo);
       caja.getChildren().add(rectangulo1);
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       caja=dibujar9(caja);
       
-      anchor.getChildren().add(caja);
+     return caja;
        
-     return anchor;
    }
     
    
