@@ -70,8 +70,8 @@ public class Almacen extends Lapiz {
       
       
       caja=dibujar9(caja);
-      
-     return caja;
+      anchor.getChildren().add(caja);
+      return anchor;
        
    }
     
