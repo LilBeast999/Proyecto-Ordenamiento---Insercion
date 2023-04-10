@@ -65,14 +65,9 @@ public class App extends Application {
             //almacen.dibujarcaja(200+(80*i),850, anchor,almacen.cajas,i);
             cajas.add(almacen.dibujarcaja(200+(80*i),850, anchor,almacen.cajas,i));
         }
-        SequentialTransition movCajas = new SequentialTransition ();
-        TranslateTransition trasCaja = new TranslateTransition(Duration.millis(5000),cajas.get(1));
-        trasCaja.setByY(-300);
-        movCajas.getChildren().add(trasCaja);
-        movCajas.play();
         
         for (int i=0; i<18; i++){
-            arreglo.add( (int)Math.floor(Math.random()*(99-1+1)+1));
+            arreglo.add( almacen.cajas.get(i).peso);
         }
         
         for (int i=0; i<18; i++){
@@ -119,7 +114,6 @@ public class App extends Application {
             SequentialTransition movCajas = new SequentialTransition ();
             int aux=0,j=0;
             AnchorPane cajaAux = new AnchorPane();
-            Text valAux = new Text();
             for(int i=1;i<arreglo.size();i++){
            
                 aux = arreglo.get(i);       //Se saca el elemento que se va a comparar
@@ -132,29 +126,16 @@ public class App extends Application {
                 while (j>=0 && aux<arreglo.get(j)){
                 
                     arreglo.set(j+1, arreglo.get(j));
-                    rectangulos.set(j+1, rectangulos.get(j));
-                    valores.set(j+1, valores.get(j));
+                    cajas.set(j+1, cajas.get(j));
                 
-                
-                    TranslateTransition trasCaja1 = new TranslateTransition(Duration.millis(velocidad),rectangulos.get(j));
+                    TranslateTransition trasCaja1 = new TranslateTransition(Duration.millis(velocidad),cajas.get(j));
                     trasCaja1.setByX(80);
                     movCajas.getChildren().add(trasCaja1);
                 
-                    TranslateTransition trasValor1 = new TranslateTransition(Duration.millis(velocidad),valores.get(j));
-                    trasValor1.setByX(80);
-                    movNumeros.getChildren().add(trasValor1);
-                
-                
-                    TranslateTransition trasCaja2 = new TranslateTransition(Duration.millis(velocidad),recAux);
+                    TranslateTransition trasCaja2 = new TranslateTransition(Duration.millis(velocidad),cajaAux);
                     trasCaja2.setByX(-80);
                     movCajas.getChildren().add(trasCaja2);
-                
-                    TranslateTransition trasValor2 = new TranslateTransition(Duration.millis(velocidad),valAux);
-                    trasValor2.setByX(-80);
-                    movNumeros.getChildren().add(trasValor2);
-                
-                
-                
+
                     j--;
                 
                     System.out.print("--->  ");
@@ -162,22 +143,16 @@ public class App extends Application {
                 }
             
                 arreglo.set(j+1, aux);
-                TranslateTransition trasCaja3 = new TranslateTransition(Duration.millis(velocidad),recAux);
+                TranslateTransition trasCaja3 = new TranslateTransition(Duration.millis(velocidad),cajaAux);
                 trasCaja3.setByY(300);
                 movCajas.getChildren().add(trasCaja3);
             
-                TranslateTransition trasValor3 = new TranslateTransition(Duration.millis(velocidad),valAux);
-                trasValor3.setByY(300);
-                movNumeros.getChildren().add(trasValor3);
-            
-                rectangulos.set(j+1, recAux);
-                valores.set(j+1, valAux);
+                cajas.set(j+1, cajaAux);
             }
             System.out.print("--->  ");
             imprimeArreglo(arreglo);
         
             movCajas.play();
-            movNumeros.play();
         }
         
     public void imprimeArreglo(ArrayList <Integer> arreglo){
