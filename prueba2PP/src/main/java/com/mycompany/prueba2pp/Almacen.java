@@ -66,7 +66,7 @@ public class Almacen extends Lapiz {
       
         anchor.getChildren().add(caja);
        
-        return anchor;
+        return caja;
    }
     
    

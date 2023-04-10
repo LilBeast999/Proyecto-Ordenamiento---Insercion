@@ -57,11 +57,19 @@ public class App extends Application {
         
         //anchor.getChildren().add(caja);
         
+        ArrayList<AnchorPane> cajas = new ArrayList();
+        
         for(int i=0;i<numerodecajas;i++){
             Caja caja = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
             almacen.cajas.add(caja);
-            almacen.dibujarcaja(200+(80*i),850, anchor,almacen.cajas,i);
+            //almacen.dibujarcaja(200+(80*i),850, anchor,almacen.cajas,i);
+            cajas.add(almacen.dibujarcaja(200+(80*i),850, anchor,almacen.cajas,i));
         }
+        SequentialTransition movCajas = new SequentialTransition ();
+        TranslateTransition trasCaja = new TranslateTransition(Duration.millis(5000),cajas.get(1));
+        trasCaja.setByY(-300);
+        movCajas.getChildren().add(trasCaja);
+        movCajas.play();
         
         for (int i=0; i<18; i++){
             arreglo.add( (int)Math.floor(Math.random()*(99-1+1)+1));
@@ -96,7 +104,7 @@ public class App extends Application {
             anchor.getChildren().add(valor);
         }*/
         
-        //Ordenamiento(arreglo,valores,rectangulos);
+        Ordenamiento(arreglo,cajas);
         
       
         
@@ -104,27 +112,21 @@ public class App extends Application {
         stage.show();
     }
 
-    public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<Text>valores, ArrayList<Rectangle>rectangulos, ArrayList<Caja>cajas){
+    public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<AnchorPane>cajas){
             System.out.print("--->  ");
             imprimeArreglo(arreglo);
             int velocidad = 400 ;
             SequentialTransition movCajas = new SequentialTransition ();
-            SequentialTransition movNumeros = new SequentialTransition ();
             int aux=0,j=0;
-            Rectangle recAux = new Rectangle();
+            AnchorPane cajaAux = new AnchorPane();
             Text valAux = new Text();
             for(int i=1;i<arreglo.size();i++){
            
                 aux = arreglo.get(i);       //Se saca el elemento que se va a comparar
-                recAux = rectangulos.get(i);
-                valAux = valores.get(i);
-                TranslateTransition trasCaja = new TranslateTransition(Duration.millis(velocidad),recAux);
+                cajaAux = cajas.get(i);
+                TranslateTransition trasCaja = new TranslateTransition(Duration.millis(velocidad),cajaAux);
                 trasCaja.setByY(-300);
-                movCajas.getChildren().add(trasCaja);
-                TranslateTransition trasValor = new TranslateTransition(Duration.millis(velocidad),valAux);
-                trasValor.setByY(-300);
-                movNumeros.getChildren().add(trasValor);
-          
+                movCajas.getChildren().add(trasCaja);         
                 j=i-1;
           
                 while (j>=0 && aux<arreglo.get(j)){
@@ -177,9 +179,7 @@ public class App extends Application {
             movCajas.play();
             movNumeros.play();
         }
-    
-   
-    
+        
     public void imprimeArreglo(ArrayList <Integer> arreglo){
         System.out.print("[ ");
         for (int i = 0; i < arreglo.size(); i++) {
