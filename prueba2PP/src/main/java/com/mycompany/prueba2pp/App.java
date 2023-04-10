@@ -74,9 +74,31 @@ public class App extends Application {
             System.out.println(arreglo.get(i)+ " ");
         }
         
-        for (int i=0; i<numerodecajas; i++){
-            System.out.println(almacen.cajas.get(i).peso+ " esto son los atributos de las cajas");
-        }
+        //for (int i=0; i<numerodecajas; i++){
+        //    System.out.println(almacen.cajas.get(i).peso+ " esto son los atributos de las cajas");
+        //}
+        
+        Lapiz lapiz= new Lapiz(anchor);
+        AnchorPane caja = new AnchorPane();
+        anchor=lapiz.dibujarfondo();
+        anchor=lapiz.dibujargrua();
+        //caja.setLayoutX(600);
+        //caja.setLayoutY(800);
+        //caja.setPrefSize(60, 60);
+        anchor=almacen.dibujarcaja(600, 400, anchor);
+        anchor=almacen.dibujargancho(anchor);
+        //aja.setStyle("-fx-background-color: #533E00;");
+        
+        //anchor.getChildren().add(caja);
+        
+        
+       
+        
+        
+        
+        
+        
+
         
         ArrayList <Rectangle> rectangulos = new ArrayList();
         ArrayList <Text> valores = new ArrayList();

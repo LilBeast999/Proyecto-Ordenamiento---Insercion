@@ -8,6 +8,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import static javafx.scene.paint.Color.color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
@@ -839,9 +840,7 @@ public class Lapiz {
      
     }
     
-    public void dibujarcaja(){
-    
-    }
+   
     
      public AnchorPane dibujargrua(){
 
@@ -1112,7 +1111,48 @@ public class Lapiz {
         return Panecaja;
     }
     
-    public void dibujargancho(){
-    
+    public AnchorPane dibujargancho(AnchorPane anchor){
+        AnchorPane grua= new AnchorPane();
+        grua.setPrefSize(100,500);
+        grua.setLayoutX(210);
+        grua.setLayoutY(442);
+        
+        Rectangle rectangulo1 = new Rectangle(20,0,10,80);
+        rectangulo1.setFill(Color.BLUE);
+        rectangulo1.setStroke(Color.BLACK);
+        rectangulo1.setStrokeWidth(2);
+        
+        Rectangle rectangulo2 = new Rectangle(20,85,40,10);
+        rectangulo2.setFill(Color.BLUE);
+        rectangulo2.setRotate(45);
+        rectangulo2.setStroke(Color.BLACK);
+        rectangulo2.setStrokeWidth(2);
+       
+        Rectangle rectangulo3 = new Rectangle(22,110,40,10);
+        rectangulo3.setFill(Color.BLUE);
+        rectangulo3.setRotate(-55);
+        rectangulo3.setStroke(Color.BLACK);
+        rectangulo3.setStrokeWidth(2);
+        
+        Rectangle rectangulo4 = new Rectangle(-12,85,40,10);
+        rectangulo4.setFill(Color.BLUE);
+        rectangulo4.setRotate(-45);
+        rectangulo4.setStroke(Color.BLACK);
+        rectangulo4.setStrokeWidth(2);
+       
+        Rectangle rectangulo5 = new Rectangle(-14,110,40,10);
+        rectangulo5.setFill(Color.BLUE);
+        rectangulo5.setRotate(55);
+        rectangulo5.setStroke(Color.BLACK);
+        rectangulo5.setStrokeWidth(2);
+        
+        grua.getChildren().add(rectangulo1);
+        grua.getChildren().add(rectangulo2);
+        grua.getChildren().add(rectangulo3);
+        grua.getChildren().add(rectangulo4);
+        grua.getChildren().add(rectangulo5);
+        anchor.getChildren().add(grua);
+        
+        return anchor;
     }
 }
