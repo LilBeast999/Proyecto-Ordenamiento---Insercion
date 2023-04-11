@@ -18,6 +18,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.animation.SequentialTransition;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.text.*;
 
@@ -71,7 +72,9 @@ public class App extends Application {
         //caja.setLayoutX(600);
         //caja.setLayoutY(800);
         //caja.setPrefSize(60, 60);
-        anchor=almacen.dibujarcaja(600, 400, anchor);
+        ArrayList <Group> numeros = new ArrayList();
+        numeros.add(almacen.dibujar0());
+        anchor=almacen.dibujarcaja(600, 400, anchor, numeros);
         anchor=almacen.dibujargancho(anchor);
         //aja.setStyle("-fx-background-color: #533E00;");
         

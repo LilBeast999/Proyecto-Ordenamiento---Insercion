@@ -5,6 +5,7 @@
 package com.mycompany.prueba2pp;
 
 import java.util.ArrayList;
+import javafx.scene.Group;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -41,7 +42,7 @@ public class Almacen extends Lapiz {
         return anchor;
     }
 
-   public AnchorPane dibujarcaja (int posx,int posy, AnchorPane anchor){
+   public AnchorPane dibujarcaja (int posx,int posy, AnchorPane anchor, ArrayList <Group> numeros){
       AnchorPane caja= new AnchorPane();
       caja.setLayoutX(posx);
       caja.setLayoutY(posy);
@@ -56,6 +57,10 @@ public class Almacen extends Lapiz {
       rectangulo1.setStrokeWidth(1);
       caja.getChildren().add(rectangulo);
       caja.getChildren().add(rectangulo1);
+       numeros.add(dibujar0());
+      caja.getChildren().add(numeros.get(1));
+   
+
       
       
       
@@ -66,10 +71,7 @@ public class Almacen extends Lapiz {
       
       
       
-      
-      
-      
-      caja=dibujar9(caja);
+     
       anchor.getChildren().add(caja);
       return anchor;
        

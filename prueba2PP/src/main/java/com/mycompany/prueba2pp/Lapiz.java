@@ -4,6 +4,7 @@
  */
 package com.mycompany.prueba2pp;
 
+import java.util.ArrayList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -928,7 +929,7 @@ public class Lapiz {
        
     }
      
-    public AnchorPane dibujar0(AnchorPane Panecaja){
+    public Group dibujar0(){
         Rectangle cero1 = new Rectangle(5, 0, 40, 10); 
         cero1.setFill(Color.BLACK); 
         Rectangle cero2 = new Rectangle(5, 0, 10, 60); 
@@ -940,9 +941,10 @@ public class Lapiz {
         Group grupo= new Group(cero1,cero2,cero3,cero4);
         grupo.setScaleX(0.3);
         grupo.setScaleY(0.3);
-        Panecaja.getChildren().add(grupo); 
+        
        
-      return Panecaja; 
+        return grupo;
+     
     } 
      
     public AnchorPane dibujar1(AnchorPane Panecaja){  
