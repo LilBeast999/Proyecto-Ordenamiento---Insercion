@@ -55,15 +55,19 @@ public class App extends Application {
         //caja.setLayoutY(800);
         //caja.setPrefSize(60, 60);
         
+        AnchorPane caja = new AnchorPane();
+        anchor=lapiz.dibujarfondo();
+        
         //anchor.getChildren().add(caja);
         
-        ArrayList<AnchorPane> cajas = new ArrayList();
+        ArrayList<AnchorPane> cajasAnchor = new ArrayList();
+        
         
         for(int i=0;i<numerodecajas;i++){
-            Caja caja = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
-            almacen.cajas.add(caja);
-            //almacen.dibujarcaja(200+(80*i),850, anchor,almacen.cajas,i);
-            cajas.add(almacen.dibujarcaja(200+(80*i),850, anchor,almacen.cajas,i));
+            Caja caja1 = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
+            almacen.cajas.add(caja1);
+            cajasAnchor.add(almacen.dibujarcaja(200+(80*i),850, anchor));
+            
         }
         
         for (int i=0; i<18; i++){
@@ -74,54 +78,21 @@ public class App extends Application {
             System.out.println(arreglo.get(i)+ " ");
         }
         
-        //for (int i=0; i<numerodecajas; i++){
-        //    System.out.println(almacen.cajas.get(i).peso+ " esto son los atributos de las cajas");
-        //}
+        AnchorPane gancho = new AnchorPane();
+        gancho=almacen.dibujargancho(anchor);
         
-        Lapiz lapiz= new Lapiz(anchor);
-        AnchorPane caja = new AnchorPane();
-        anchor=lapiz.dibujarfondo();
         anchor=lapiz.dibujargrua();
         //caja.setLayoutX(600);
         //caja.setLayoutY(800);
         //caja.setPrefSize(60, 60);
-        anchor=almacen.dibujarcaja(600, 400, anchor);
-        anchor=almacen.dibujargancho(anchor);
+        
         //aja.setStyle("-fx-background-color: #533E00;");
         
         //anchor.getChildren().add(caja);
         
         
-       
         
-        
-        
-        
-        
-
-        
-        ArrayList <Rectangle> rectangulos = new ArrayList();
-        ArrayList <Text> valores = new ArrayList();
-       
-        Text numero = new Text(100,100,Integer.toString(arreglo.get(0)));
-        //anchor.getChildren().add(numero);
-        
-        
-        
-        /*for (int i = 0; i < arreglo.size(); i++) {
-            Rectangle rectangulo = new Rectangle(200+(80*i),850,60,60); 
-            rectangulos.add(rectangulo);
-            rectangulo.setFill(Color.BROWN);
-            anchor.getChildren().add(rectangulo);
-            Text valor = new Text(((200+(80*i))+25),880,Integer.toString(arreglo.get(i)));
-            valor.scaleXProperty().set(2.5);
-            valor.scaleYProperty().set(2.5);
-            valor.setFill(Color.WHITE);
-            valores.add(valor);
-            anchor.getChildren().add(valor);
-        }*/
-        
-        Ordenamiento(arreglo,cajas);
+        Ordenamiento(arreglo,cajasAnchor,gancho);
         
       
         
@@ -129,52 +100,92 @@ public class App extends Application {
         stage.show();
     }
 
-    public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<AnchorPane>cajas){
+    public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<AnchorPane>cajasAnchor,AnchorPane gancho){
             System.out.print("--->  ");
             imprimeArreglo(arreglo);
-            int velocidad = 400 ;
+            int velocidad = 1000 ;
             SequentialTransition movCajas = new SequentialTransition ();
+            SequentialTransition movGancho = new SequentialTransition ();
             int aux=0,j=0;
             AnchorPane cajaAux = new AnchorPane();
             for(int i=1;i<arreglo.size();i++){
-           
+                
                 aux = arreglo.get(i);       //Se saca el elemento que se va a comparar
-                cajaAux = cajas.get(i);
+                cajaAux = cajasAnchor.get(i);
+                TranslateTransition trasGancho = new TranslateTransition(Duration.millis(velocidad),gancho);
+                trasGancho.setToX(cajaAux.getLayoutX()-200);
+                movGancho.getChildren().add(trasGancho);
+                
+                TranslateTransition bajaGancho = new TranslateTransition(Duration.millis(velocidad),gancho);
+                bajaGancho.setByY(300);
+                movGancho.getChildren().add(bajaGancho);
+                
+                TranslateTransition subeGancho = new TranslateTransition(Duration.millis(velocidad),gancho);
+                subeGancho.setByY(-300);
+                movGancho.getChildren().add(subeGancho);
+                
+                
+                TranslateTransition trasVacioCaja = new TranslateTransition(Duration.millis(velocidad));
+                movCajas.getChildren().add(trasVacioCaja);
+                
+                TranslateTransition trasVacioCaja1 = new TranslateTransition(Duration.millis(velocidad));
+                movCajas.getChildren().add(trasVacioCaja1);
+                
                 TranslateTransition trasCaja = new TranslateTransition(Duration.millis(velocidad),cajaAux);
                 trasCaja.setByY(-300);
                 movCajas.getChildren().add(trasCaja);         
                 j=i-1;
           
                 while (j>=0 && aux<arreglo.get(j)){
-                
+                    
                     arreglo.set(j+1, arreglo.get(j));
-                    cajas.set(j+1, cajas.get(j));
-                
-                    TranslateTransition trasCaja1 = new TranslateTransition(Duration.millis(velocidad),cajas.get(j));
+                    cajasAnchor.set(j+1, cajasAnchor.get(j));
+                       
+                    TranslateTransition trasCaja1 = new TranslateTransition(Duration.millis(velocidad),cajasAnchor.get(j));
                     trasCaja1.setByX(80);
                     movCajas.getChildren().add(trasCaja1);
-                
+                    
+                    TranslateTransition trasVacioGancho = new TranslateTransition(Duration.millis(velocidad));
+                    movGancho.getChildren().add(trasVacioGancho);
+                    
                     TranslateTransition trasCaja2 = new TranslateTransition(Duration.millis(velocidad),cajaAux);
                     trasCaja2.setByX(-80);
                     movCajas.getChildren().add(trasCaja2);
+                    
+                    TranslateTransition trasGancho1 = new TranslateTransition(Duration.millis(velocidad),gancho);
+                    trasGancho1.setByX(-80);
+                    movGancho.getChildren().add(trasGancho1);
 
                     j--;
                 
                     System.out.print("--->  ");
                     imprimeArreglo(arreglo);
                 }
-            
+                
+                TranslateTransition bajaGancho1 = new TranslateTransition(Duration.millis(velocidad),gancho);
+                bajaGancho1.setByY(300);
+                movGancho.getChildren().add(bajaGancho1);
+                
                 arreglo.set(j+1, aux);
                 TranslateTransition trasCaja3 = new TranslateTransition(Duration.millis(velocidad),cajaAux);
                 trasCaja3.setByY(300);
                 movCajas.getChildren().add(trasCaja3);
-            
-                cajas.set(j+1, cajaAux);
+                
+                TranslateTransition trasVacioCaja2 = new TranslateTransition(Duration.millis(velocidad));
+                movCajas.getChildren().add(trasVacioCaja2);
+                
+                TranslateTransition subeGancho1 = new TranslateTransition(Duration.millis(velocidad),gancho);
+                subeGancho1.setByY(-300);
+                movGancho.getChildren().add(subeGancho1);
+                
+                
+                cajasAnchor.set(j+1, cajaAux);
             }
             System.out.print("--->  ");
             imprimeArreglo(arreglo);
         
             movCajas.play();
+            movGancho.play();
         }
         
     public void imprimeArreglo(ArrayList <Integer> arreglo){

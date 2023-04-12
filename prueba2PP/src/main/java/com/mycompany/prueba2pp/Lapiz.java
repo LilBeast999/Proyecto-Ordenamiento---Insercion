@@ -1112,10 +1112,10 @@ public class Lapiz {
     }
     
     public AnchorPane dibujargancho(AnchorPane anchor){
-        AnchorPane grua= new AnchorPane();
-        grua.setPrefSize(100,500);
-        grua.setLayoutX(210);
-        grua.setLayoutY(442);
+        AnchorPane gancho= new AnchorPane();
+        gancho.setPrefSize(100,500);
+        gancho.setLayoutX(210);
+        gancho.setLayoutY(442);
         
         Rectangle rectangulo1 = new Rectangle(20,0,10,80);
         rectangulo1.setFill(Color.BLUE);
@@ -1130,7 +1130,7 @@ public class Lapiz {
        
         Rectangle rectangulo3 = new Rectangle(22,110,40,10);
         rectangulo3.setFill(Color.BLUE);
-        rectangulo3.setRotate(-55);
+        rectangulo3.setRotate(-85);
         rectangulo3.setStroke(Color.BLACK);
         rectangulo3.setStrokeWidth(2);
         
@@ -1140,19 +1140,19 @@ public class Lapiz {
         rectangulo4.setStroke(Color.BLACK);
         rectangulo4.setStrokeWidth(2);
        
-        Rectangle rectangulo5 = new Rectangle(-14,110,40,10);
+        Rectangle rectangulo5 = new Rectangle(-22,113,40,10);
         rectangulo5.setFill(Color.BLUE);
-        rectangulo5.setRotate(55);
+        rectangulo5.setRotate(85);
         rectangulo5.setStroke(Color.BLACK);
         rectangulo5.setStrokeWidth(2);
         
-        grua.getChildren().add(rectangulo1);
-        grua.getChildren().add(rectangulo2);
-        grua.getChildren().add(rectangulo3);
-        grua.getChildren().add(rectangulo4);
-        grua.getChildren().add(rectangulo5);
-        anchor.getChildren().add(grua);
+        gancho.getChildren().add(rectangulo1);
+        gancho.getChildren().add(rectangulo2);
+        gancho.getChildren().add(rectangulo3);
+        gancho.getChildren().add(rectangulo4);
+        gancho.getChildren().add(rectangulo5);
+        anchor.getChildren().add(gancho);
         
-        return anchor;
+        return gancho;
     }
 }
