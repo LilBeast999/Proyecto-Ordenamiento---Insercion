@@ -57,8 +57,9 @@ public class Almacen extends Lapiz {
       rectangulo1.setStrokeWidth(1);
       caja.getChildren().add(rectangulo);
       caja.getChildren().add(rectangulo1);
-       numeros.add(dibujar0());
-      caja.getChildren().add(numeros.get(1));
+      
+      
+       DibujarNumeros(caja, cajas.get(0).peso, numeros);
    
 
       

@@ -929,7 +929,9 @@ public class Lapiz {
        
     }
      
-    public Group dibujar0(){
+    public ArrayList<Group> AlmacenarNumeros(){
+        ArrayList <Group> numeros= new ArrayList();
+        
         Rectangle cero1 = new Rectangle(5, 0, 40, 10); 
         cero1.setFill(Color.BLACK); 
         Rectangle cero2 = new Rectangle(5, 0, 10, 60); 
@@ -938,180 +940,157 @@ public class Lapiz {
         cero3.setFill(Color.BLACK); 
         Rectangle cero4 = new Rectangle(45, 0, 10, 60); 
         cero4.setFill(Color.BLACK); 
-        Group grupo= new Group(cero1,cero2,cero3,cero4);
-        grupo.setScaleX(0.3);
-        grupo.setScaleY(0.3);
+        Group grupo0= new Group(cero1,cero2,cero3,cero4);
+        grupo0.setScaleX(0.5);
+        grupo0.setScaleY(0.5);
         
        
-        return grupo;
-     
-    } 
-     
-    public AnchorPane dibujar1(AnchorPane Panecaja){  
         Rectangle uno1 = new Rectangle(25, 0, 10, 60); 
         uno1.setFill(Color.BLACK);
         uno1.setScaleX(0.5);
         uno1.setScaleY(0.5);
-        Panecaja.getChildren().add(uno1); 
+        Group grupo1= new Group(uno1);
         
-        return Panecaja;     
-    
-    } 
-    
-    public AnchorPane dibujar2(AnchorPane Panecaja){
-        int x=0;
-        Rectangle dos1 = new Rectangle(10+x, 0, 40, 10); 
+        Rectangle dos1 = new Rectangle(10, 0, 40, 10); 
         dos1.setFill(Color.BLACK); 
-        Rectangle dos2 = new Rectangle(40+x, 0, 10, 30); 
+        Rectangle dos2 = new Rectangle(40, 0, 10, 30); 
         dos2.setFill(Color.BLACK); 
-        Rectangle dos3 = new Rectangle(10+x, 30, 40, 10); 
+        Rectangle dos3 = new Rectangle(10, 30, 40, 10); 
         dos3.setFill(Color.BLACK); 
-        Rectangle dos4 = new Rectangle(10+x, 30, 10, 30); 
+        Rectangle dos4 = new Rectangle(10, 30, 10, 30); 
         dos4.setFill(Color.BLACK); 
-        Rectangle dos5 = new Rectangle(10+x, 50, 40, 10); 
+        Rectangle dos5 = new Rectangle(10, 50, 40, 10); 
         dos5.setFill(Color.BLACK); 
-        Group grupo= new Group(dos1,dos2,dos3,dos4,dos5);
-        grupo.setScaleX(0.5);
-        grupo.setScaleY(0.5);
-        Panecaja.getChildren().add(grupo); 
+        Group grupo2= new Group(dos1,dos2,dos3,dos4,dos5);
+        grupo2.setScaleX(0.5);
+        grupo2.setScaleY(0.5);
         
-        return Panecaja;
-        
-    }
-    
-    public AnchorPane dibujar3(AnchorPane Panecaja){
-     int x=0 ; 
-        Rectangle tres1 = new Rectangle(10+x, 0, 40, 10); 
+        Rectangle tres1 = new Rectangle(10, 0, 20, 10); 
         tres1.setFill(Color.BLACK); 
-        Rectangle tres2 = new Rectangle(40+x, 10, 10, 30); 
+        Rectangle tres2 = new Rectangle(40, 10, 10, 30); 
         tres2.setFill(Color.BLACK); 
-        Rectangle tres3 = new Rectangle(10+x, 30, 40, 10); 
+        Rectangle tres3 = new Rectangle(10, 30, 20, 10); 
         tres3.setFill(Color.BLACK); 
-        Rectangle tres4 = new Rectangle(40+x, 30, 10, 30); 
+        Rectangle tres4 = new Rectangle(40, 30, 10, 30); 
         tres4.setFill(Color.BLACK); 
-        Rectangle tres5 = new Rectangle(10+x, 50, 40, 10); 
+        Rectangle tres5 = new Rectangle(10, 50, 20, 10); 
         tres5.setFill(Color.BLACK); 
-        Group grupo= new Group(tres1,tres2,tres3,tres4,tres5);
-        grupo.setScaleX(0.5);
-        grupo.setScaleY(0.5);
-        Panecaja.getChildren().add(grupo);
-        return Panecaja;
-  
-    }
-    
-    public AnchorPane dibujar4(AnchorPane Panecaja){
-        int x=0; 
-        Rectangle cuatro1 = new Rectangle(10+x, 0, 10, 30); 
+        Group grupo3= new Group(tres1,tres2,tres3,tres4,tres5);
+        grupo3.setScaleX(0.5);
+        grupo3.setScaleY(0.5);
+        
+        Rectangle cuatro1 = new Rectangle(10, 0, 10, 30); 
         cuatro1.setFill(Color.BLACK); 
-        Rectangle cuatro2 = new Rectangle(40+x, 0, 10, 60); 
+        Rectangle cuatro2 = new Rectangle(40, 0, 10, 60); 
         cuatro2.setFill(Color.BLACK); 
-        Rectangle cuatro3 = new Rectangle(10+x, 30, 40, 10); 
+        Rectangle cuatro3 = new Rectangle(10, 30, 40, 10); 
         cuatro3.setFill(Color.BLACK); 
-        Group grupo= new Group(cuatro1,cuatro2,cuatro3);
-        grupo.setScaleX(0.5);
-        grupo.setScaleY(0.5);
-        Panecaja.getChildren().add(grupo);
+        Group grupo4= new Group(cuatro1,cuatro2,cuatro3);
+        grupo4.setScaleX(0.5);
+        grupo4.setScaleY(0.5);
         
-        
-        return Panecaja;
-    
-    }
-    
-    public AnchorPane dibujar5(AnchorPane Panecaja){
-        int x=0; 
-  
-        Rectangle cinco1 = new Rectangle(10+x, 0, 40, 10); 
+        Rectangle cinco1 = new Rectangle(10, 0, 40, 10); 
         cinco1.setFill(Color.BLACK); 
-        Rectangle cinco2 = new Rectangle(10+x, 10, 10, 30); 
+        Rectangle cinco2 = new Rectangle(10, 10, 10, 30); 
         cinco2.setFill(Color.BLACK); 
-        Rectangle cinco3 = new Rectangle(10+x, 30, 40, 10); 
+        Rectangle cinco3 = new Rectangle(10, 30, 40, 10); 
         cinco3.setFill(Color.BLACK); 
-        Rectangle cinco4 = new Rectangle(40+x, 30, 10, 30); 
+        Rectangle cinco4 = new Rectangle(40, 30, 10, 30); 
         cinco4.setFill(Color.BLACK); 
-        Rectangle cinco5 = new Rectangle(10+x, 50, 40, 10); 
+        Rectangle cinco5 = new Rectangle(10, 50, 40, 10); 
         cinco5.setFill(Color.BLACK); 
-        Group grupo= new Group(cinco1,cinco2,cinco3,cinco4,cinco5);
-        grupo.setScaleX(0.5);
-        grupo.setScaleY(0.5);
-        Panecaja.getChildren().add(grupo);
-        return Panecaja;
-    
-    }
-    
-    public AnchorPane dibujar6(AnchorPane Panecaja){
-        int x=0;
- 
-         Rectangle seis1 = new Rectangle(10+x, 0, 40, 10); 
+        Group grupo5= new Group(cinco1,cinco2,cinco3,cinco4,cinco5);
+        grupo5.setScaleX(0.5);
+        grupo5.setScaleY(0.5);
+        
+        Rectangle seis1 = new Rectangle(10, 0, 30, 10); 
         seis1.setFill(Color.BLACK); 
-        Rectangle seis2 = new Rectangle(10+x, 0, 10, 60); 
+        Rectangle seis2 = new Rectangle(10, 0, 10, 60); 
         seis2.setFill(Color.BLACK); 
-        Rectangle seis3 = new Rectangle(10+x, 30, 40, 10); 
+        Rectangle seis3 = new Rectangle(10, 30, 40, 10); 
         seis3.setFill(Color.BLACK); 
-        Rectangle seis4 = new Rectangle(40+x, 30, 10, 30); 
+        Rectangle seis4 = new Rectangle(40, 30, 10, 30); 
         seis4.setFill(Color.BLACK); 
-        Rectangle seis5 = new Rectangle(10+x, 50, 40, 10); 
+        Rectangle seis5 = new Rectangle(10, 50, 40, 10); 
         seis5.setFill(Color.BLACK);
-        Group grupo= new Group(seis1,seis2,seis3,seis4,seis5);
-        grupo.setScaleX(0.5);
-        grupo.setScaleY(0.5);
-        Panecaja.getChildren().add(grupo);
+        Group grupo6= new Group(seis1,seis2,seis3,seis4,seis5);
+        grupo6.setScaleX(0.5);
+        grupo6.setScaleY(0.5);
         
-        
-        return Panecaja;
-    
-    }
-    
-    public AnchorPane dibujar7(AnchorPane Panecaja ){
-        int x=0;  
-        Rectangle siete1 = new Rectangle(10+x, 0, 40, 10); 
+        Rectangle siete1 = new Rectangle(20, 0, 30, 10); 
         siete1.setFill(Color.BLACK); 
-        Rectangle siete2 = new Rectangle(40+x, 0, 10, 60); 
+        Rectangle siete2 = new Rectangle(40, 0, 10, 60); 
         siete2.setFill(Color.BLACK); 
-        Group grupo= new Group(siete1,siete2);
-        grupo.setScaleX(0.5);
-        grupo.setScaleY(0.5);
-        Panecaja.getChildren().add(grupo);
-        return Panecaja;
+        Group grupo7= new Group(siete1,siete2);
+        grupo7.setScaleX(0.5);
+        grupo7.setScaleY(0.5);
     
-    }
-    
-    public AnchorPane dibujar8(AnchorPane Panecaja){
-        int x=0;
-; 
-        Rectangle ocho1 = new Rectangle(10+x, 0, 40, 10); 
+         Rectangle ocho1 = new Rectangle(10, 0, 40, 10); 
         ocho1.setFill(Color.BLACK); 
-        Rectangle ocho2 = new Rectangle(10+x, 0, 10, 60); 
+        Rectangle ocho2 = new Rectangle(10, 0, 10, 60); 
         ocho2.setFill(Color.BLACK); 
-        Rectangle ocho3 = new Rectangle(10+x, 30, 40, 10); 
+        Rectangle ocho3 = new Rectangle(10, 30, 40, 10); 
         ocho3.setFill(Color.BLACK); 
-        Rectangle ocho4 = new Rectangle(10+x, 50, 40, 10); 
+        Rectangle ocho4 = new Rectangle(10, 50, 40, 10); 
         ocho4.setFill(Color.BLACK); 
-        Rectangle ocho5 = new Rectangle(40+x, 0, 10, 60); 
+        Rectangle ocho5 = new Rectangle(40, 0, 10, 60); 
         ocho5.setFill(Color.BLACK); 
-        Group grupo= new Group(ocho1,ocho2,ocho3,ocho4,ocho5);
-        grupo.setScaleX(0.5);
-        grupo.setScaleY(0.5);
-        Panecaja.getChildren().add(grupo);
-        return Panecaja;
+        Group grupo8= new Group(ocho1,ocho2,ocho3,ocho4,ocho5);
+        grupo8.setScaleX(0.5);
+        grupo8.setScaleY(0.5);
+        
+        Rectangle nueve1 = new Rectangle(10, 0, 40, 10); 
+        nueve1.setFill(Color.BLACK); 
+        Rectangle nueve2 = new Rectangle(10, 0, 10, 40); 
+        nueve2.setFill(Color.BLACK); 
+        Rectangle nueve3 = new Rectangle(10, 30, 40, 10); 
+        nueve3.setFill(Color.BLACK); 
+        Rectangle nueve4 = new Rectangle(40, 0, 10, 60); 
+        nueve4.setFill(Color.BLACK); 
+        Group grupo9= new Group(nueve1,nueve2,nueve3,nueve4);
+        grupo9.setScaleX(0.5);
+        grupo9.setScaleY(0.5);
+        
+        numeros.add(grupo0);
+        numeros.add(grupo1);
+        numeros.add(grupo2);
+        numeros.add(grupo3);
+        numeros.add(grupo4);
+        numeros.add(grupo5);
+        numeros.add(grupo6);
+        numeros.add(grupo7);
+        numeros.add(grupo8);
+        numeros.add(grupo9);      
+
+       return numeros;
+    } 
+     
+    public AnchorPane DibujarNumeros(AnchorPane caja, int numero, ArrayList <Group> numeros){
+        
+        if (numero>9){
+            //agregar excepcion cuando los numeros sean iguales
+            if 
+            numeros.get(numero/10).setLayoutX(-10);
+            numeros.get(numero/10).setScaleX(0.3);
+            caja.getChildren().add(numeros.get(numero/10));
+            numeros.get(numero%10).setLayoutX(10);
+            numeros.get(numero%10).setScaleX(0.3);
+            caja.getChildren().add(numeros.get(numero%10));       
+        
+        }
+        else{
+            caja.getChildren().add(numeros.get(numero));
+        
+        }
+ 
+    
+    return caja;
     }
     
-    public AnchorPane dibujar9(AnchorPane Panecaja){
-        int x=0;
-        Rectangle nueve1 = new Rectangle(10+x, 0, 40, 10); 
-        nueve1.setFill(Color.BLACK); 
-        Rectangle nueve2 = new Rectangle(10+x, 0, 10, 40); 
-        nueve2.setFill(Color.BLACK); 
-        Rectangle nueve3 = new Rectangle(10+x, 30, 40, 10); 
-        nueve3.setFill(Color.BLACK); 
-        Rectangle nueve4 = new Rectangle(40+x, 0, 10, 60); 
-        nueve4.setFill(Color.BLACK); 
-        Group grupo= new Group(nueve1,nueve2,nueve3,nueve4);
-        grupo.setScaleX(0.5);
-        grupo.setScaleY(0.5);
-        Panecaja.getChildren().add(grupo);
-        
-        return Panecaja;
-    }
+    
+    
+    
+   
     
     public AnchorPane dibujargancho(AnchorPane anchor){
         AnchorPane grua= new AnchorPane();
