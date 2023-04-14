@@ -117,7 +117,7 @@ public class App extends Application {
 
     public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<Text>valores, ArrayList<Rectangle>rectangulos){
             System.out.print("--->  ");
-            imprimeArreglo(arreglo);
+            //imprimeArreglo(arreglo);
             int velocidad = 400 ;
             SequentialTransition movCajas = new SequentialTransition ();
             SequentialTransition movNumeros = new SequentialTransition ();
@@ -167,7 +167,7 @@ public class App extends Application {
                     j--;
                 
                     System.out.print("--->  ");
-                    imprimeArreglo(arreglo);
+                    //imprimeArreglo(arreglo);
                 }
             
                 arreglo.set(j+1, aux);

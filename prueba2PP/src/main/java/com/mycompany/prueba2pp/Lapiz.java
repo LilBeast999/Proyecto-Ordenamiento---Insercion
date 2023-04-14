@@ -5,7 +5,11 @@
 package com.mycompany.prueba2pp;
 
 import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -945,7 +949,7 @@ public class Lapiz {
         grupo0.setScaleY(0.5);
         
        
-        Rectangle uno1 = new Rectangle(25, 0, 10, 60); 
+        Rectangle uno1 = new Rectangle(15, 0, 30, 60); 
         uno1.setFill(Color.BLACK);
         uno1.setScaleX(0.5);
         uno1.setScaleY(0.5);
@@ -965,15 +969,15 @@ public class Lapiz {
         grupo2.setScaleX(0.5);
         grupo2.setScaleY(0.5);
         
-        Rectangle tres1 = new Rectangle(10, 0, 20, 10); 
+        Rectangle tres1 = new Rectangle(10, 0, 40, 10); 
         tres1.setFill(Color.BLACK); 
         Rectangle tres2 = new Rectangle(40, 10, 10, 30); 
         tres2.setFill(Color.BLACK); 
-        Rectangle tres3 = new Rectangle(10, 30, 20, 10); 
+        Rectangle tres3 = new Rectangle(10, 30, 40, 10); 
         tres3.setFill(Color.BLACK); 
         Rectangle tres4 = new Rectangle(40, 30, 10, 30); 
         tres4.setFill(Color.BLACK); 
-        Rectangle tres5 = new Rectangle(10, 50, 20, 10); 
+        Rectangle tres5 = new Rectangle(10, 50, 40, 10); 
         tres5.setFill(Color.BLACK); 
         Group grupo3= new Group(tres1,tres2,tres3,tres4,tres5);
         grupo3.setScaleX(0.5);
@@ -1017,9 +1021,9 @@ public class Lapiz {
         grupo6.setScaleX(0.5);
         grupo6.setScaleY(0.5);
         
-        Rectangle siete1 = new Rectangle(20, 0, 30, 10); 
+        Rectangle siete1 = new Rectangle(15, 0, 30, 10); 
         siete1.setFill(Color.BLACK); 
-        Rectangle siete2 = new Rectangle(40, 0, 10, 60); 
+        Rectangle siete2 = new Rectangle(35, 0, 10, 60); 
         siete2.setFill(Color.BLACK); 
         Group grupo7= new Group(siete1,siete2);
         grupo7.setScaleX(0.5);
@@ -1051,6 +1055,125 @@ public class Lapiz {
         grupo9.setScaleX(0.5);
         grupo9.setScaleY(0.5);
         
+        Rectangle cero11 = new Rectangle(5, 0, 40, 10); 
+        cero1.setFill(Color.BLACK); 
+        Rectangle cero22 = new Rectangle(5, 0, 10, 60); 
+        cero2.setFill(Color.BLACK); 
+        Rectangle cero33 = new Rectangle(5, 50, 40, 10); 
+        cero3.setFill(Color.BLACK); 
+        Rectangle cero44 = new Rectangle(45, 0, 10, 60); 
+        cero4.setFill(Color.BLACK); 
+        Group grupo00= new Group(cero11,cero22,cero33,cero44);
+        grupo00.setScaleX(0.5);
+        grupo00.setScaleY(0.5);
+        
+       
+        Rectangle uno11 = new Rectangle(15, 0, 30, 60); 
+        uno11.setFill(Color.BLACK);
+        uno11.setScaleX(0.5);
+        uno11.setScaleY(0.5);
+        Group grupo11= new Group(uno11);
+        
+        Rectangle dos11 = new Rectangle(10, 0, 40, 10); 
+        dos11.setFill(Color.BLACK); 
+        Rectangle dos22 = new Rectangle(40, 0, 10, 30); 
+        dos22.setFill(Color.BLACK); 
+        Rectangle dos33 = new Rectangle(10, 30, 40, 10); 
+        dos33.setFill(Color.BLACK); 
+        Rectangle dos44 = new Rectangle(10, 30, 10, 30); 
+        dos44.setFill(Color.BLACK); 
+        Rectangle dos55 = new Rectangle(10, 50, 40, 10); 
+        dos55.setFill(Color.BLACK); 
+        Group grupo22= new Group(dos11,dos22,dos33,dos44,dos55);
+        grupo22.setScaleX(0.5);
+        grupo22.setScaleY(0.5);
+        
+        Rectangle tres11 = new Rectangle(10, 0, 40, 10); 
+        tres11.setFill(Color.BLACK); 
+        Rectangle tres22 = new Rectangle(40, 10, 10, 30); 
+        tres22.setFill(Color.BLACK); 
+        Rectangle tres33 = new Rectangle(10, 30, 40, 10); 
+        tres33.setFill(Color.BLACK); 
+        Rectangle tres44 = new Rectangle(40, 30, 10, 30); 
+        tres44.setFill(Color.BLACK); 
+        Rectangle tres55 = new Rectangle(10, 50, 40, 10); 
+        tres55.setFill(Color.BLACK); 
+        Group grupo33= new Group(tres11,tres22,tres33,tres44,tres55);
+        grupo33.setScaleX(0.5);
+        grupo33.setScaleY(0.5);
+        
+        Rectangle cuatro11 = new Rectangle(10, 0, 10, 30); 
+        cuatro11.setFill(Color.BLACK); 
+        Rectangle cuatro22 = new Rectangle(40, 0, 10, 60); 
+        cuatro22.setFill(Color.BLACK); 
+        Rectangle cuatro33 = new Rectangle(10, 30, 40, 10); 
+        cuatro33.setFill(Color.BLACK); 
+        Group grupo44= new Group(cuatro11,cuatro22,cuatro33);
+        grupo44.setScaleX(0.5);
+        grupo44.setScaleY(0.5);
+        
+        Rectangle cinco11 = new Rectangle(10, 0, 40, 10); 
+        cinco11.setFill(Color.BLACK); 
+        Rectangle cinco22 = new Rectangle(10, 10, 10, 30); 
+        cinco22.setFill(Color.BLACK); 
+        Rectangle cinco33 = new Rectangle(10, 30, 40, 10); 
+        cinco33.setFill(Color.BLACK); 
+        Rectangle cinco44 = new Rectangle(40, 30, 10, 30); 
+        cinco44.setFill(Color.BLACK); 
+        Rectangle cinco55 = new Rectangle(10, 50, 40, 10); 
+        cinco55.setFill(Color.BLACK); 
+        Group grupo55= new Group(cinco11,cinco22,cinco33,cinco44,cinco55);
+        grupo55.setScaleX(0.5);
+        grupo55.setScaleY(0.5);
+        
+        Rectangle seis11 = new Rectangle(10, 0, 30, 10); 
+        seis11.setFill(Color.BLACK); 
+        Rectangle seis22 = new Rectangle(10, 0, 10, 60); 
+        seis22.setFill(Color.BLACK); 
+        Rectangle seis33 = new Rectangle(10, 30, 40, 10); 
+        seis33.setFill(Color.BLACK); 
+        Rectangle seis44 = new Rectangle(40, 30, 10, 30); 
+        seis44.setFill(Color.BLACK); 
+        Rectangle seis55 = new Rectangle(10, 50, 40, 10); 
+        seis55.setFill(Color.BLACK);
+        Group grupo66= new Group(seis11,seis22,seis33,seis44,seis55);
+        grupo66.setScaleX(0.5);
+        grupo66.setScaleY(0.5);
+        
+        Rectangle siete11 = new Rectangle(15, 0, 30, 10); 
+        siete11.setFill(Color.BLACK); 
+        Rectangle siete22 = new Rectangle(35, 0, 10, 60); 
+        siete22.setFill(Color.BLACK); 
+        Group grupo77= new Group(siete11,siete22);
+        grupo77.setScaleX(0.5);
+        grupo77.setScaleY(0.5);
+    
+         Rectangle ocho11 = new Rectangle(10, 0, 40, 10); 
+        ocho11.setFill(Color.BLACK); 
+        Rectangle ocho22 = new Rectangle(10, 0, 10, 60); 
+        ocho22.setFill(Color.BLACK); 
+        Rectangle ocho33 = new Rectangle(10, 30, 40, 10); 
+        ocho33.setFill(Color.BLACK); 
+        Rectangle ocho44 = new Rectangle(10, 50, 40, 10); 
+        ocho44.setFill(Color.BLACK); 
+        Rectangle ocho55= new Rectangle(40, 0, 10, 60); 
+        ocho5.setFill(Color.BLACK); 
+        Group grupo88= new Group(ocho11,ocho22,ocho33,ocho44,ocho55);
+        grupo88.setScaleX(0.5);
+        grupo88.setScaleY(0.5);
+        
+        Rectangle nueve11 = new Rectangle(10, 0, 40, 10); 
+        nueve11.setFill(Color.BLACK); 
+        Rectangle nueve22 = new Rectangle(10, 0, 10, 40); 
+        nueve22.setFill(Color.BLACK); 
+        Rectangle nueve33 = new Rectangle(10, 30, 40, 10); 
+        nueve33.setFill(Color.BLACK); 
+        Rectangle nueve44 = new Rectangle(40, 0, 10, 60); 
+        nueve44.setFill(Color.BLACK); 
+        Group grupo99= new Group(nueve11,nueve22,nueve33,nueve44);
+        grupo99.setScaleX(0.5);
+        grupo99.setScaleY(0.5);
+        
         numeros.add(grupo0);
         numeros.add(grupo1);
         numeros.add(grupo2);
@@ -1060,7 +1183,18 @@ public class Lapiz {
         numeros.add(grupo6);
         numeros.add(grupo7);
         numeros.add(grupo8);
-        numeros.add(grupo9);      
+        numeros.add(grupo9); 
+        numeros.add(grupo00);
+        numeros.add(grupo11);
+        numeros.add(grupo22);
+        numeros.add(grupo33);
+        numeros.add(grupo44);
+        numeros.add(grupo55);
+        numeros.add(grupo66);
+        numeros.add(grupo77);
+        numeros.add(grupo88);
+        numeros.add(grupo99); 
+        
 
        return numeros;
     } 
@@ -1069,17 +1203,51 @@ public class Lapiz {
         
         if (numero>9){
             //agregar excepcion cuando los numeros sean iguales
-            if 
-            numeros.get(numero/10).setLayoutX(-10);
-            numeros.get(numero/10).setScaleX(0.3);
-            caja.getChildren().add(numeros.get(numero/10));
-            numeros.get(numero%10).setLayoutX(10);
-            numeros.get(numero%10).setScaleX(0.3);
-            caja.getChildren().add(numeros.get(numero%10));       
+            if ((numero/10) == (numero%10)){
+                
+                System.out.println("paso aca");
+                
+                
+                
+                numeros.get(numero/10).setLayoutX(-10);
+                numeros.get(numero/10).setScaleX(0.4);
+                caja.getChildren().add(numeros.get(numero/10));
+                numeros.get((numero%10)+10).setLayoutX(10);
+                numeros.get((numero%10)+10).setScaleX(0.4);
+                caja.getChildren().add(numeros.get((numero%10)+10));    
+                
+                
+                
+                
+            }
+                else{
+                   numeros.get(numero/10).setLayoutX(-10);
+                   numeros.get(numero/10).setScaleX(0.4);
+                   caja.getChildren().add(numeros.get(numero/10));
+                   numeros.get(numero%10).setLayoutX(10);
+                   numeros.get(numero%10).setScaleX(0.4);
+                   caja.getChildren().add(numeros.get(numero%10));       
+            }
+
         
+                
+            
+            
         }
+            
+        
         else{
-            caja.getChildren().add(numeros.get(numero));
+             
+            if (numero==1){
+                numeros.get(numero).setScaleX(0.4);
+                
+                caja.getChildren().add(numeros.get(numero));
+            }
+            else{
+                caja.getChildren().add(numeros.get(numero));
+            }
+            
+            
         
         }
  
