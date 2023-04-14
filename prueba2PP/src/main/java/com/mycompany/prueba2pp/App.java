@@ -69,6 +69,7 @@ public class App extends Application {
         AnchorPane caja = new AnchorPane();
         anchor=lapiz.dibujarfondo();
         anchor=lapiz.dibujargrua();
+        
         //caja.setLayoutX(600);
         //caja.setLayoutY(800);
         //caja.setPrefSize(60, 60);
@@ -76,6 +77,7 @@ public class App extends Application {
         numeros=almacen.AlmacenarNumeros();
         anchor=almacen.dibujarcaja(600, 400, anchor, numeros);
         anchor=almacen.dibujargancho(anchor);
+        anchor=lapiz.dibujarcuerda(anchor);
         //aja.setStyle("-fx-background-color: #533E00;");
         
         //anchor.getChildren().add(caja);
