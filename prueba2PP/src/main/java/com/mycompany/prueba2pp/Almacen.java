@@ -47,6 +47,8 @@ public class Almacen extends Lapiz {
       AnchorPane caja= new AnchorPane();
       caja.setLayoutX(posx);
       caja.setLayoutY(posy);
+      ArrayList <Group> numeros = new ArrayList();
+      numeros=AlmacenarNumeros();
       caja.setPrefSize(60, 60);
       ArrayList <Group> numeros = new ArrayList();
       numeros=AlmacenarNumeros();
