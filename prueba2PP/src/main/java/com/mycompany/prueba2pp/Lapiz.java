@@ -1206,52 +1206,34 @@ public class Lapiz {
             if ((numero/10) == (numero%10)){
                 
                 System.out.println("paso aca");
-                
-                
-                
+                                
                 numeros.get(numero/10).setLayoutX(-10);
                 numeros.get(numero/10).setScaleX(0.4);
                 caja.getChildren().add(numeros.get(numero/10));
                 numeros.get((numero%10)+10).setLayoutX(10);
                 numeros.get((numero%10)+10).setScaleX(0.4);
-                caja.getChildren().add(numeros.get((numero%10)+10));    
+                caja.getChildren().add(numeros.get((numero%10)+10));
                 
-                
-                
-                
-            }
-                else{
-                   numeros.get(numero/10).setLayoutX(-10);
-                   numeros.get(numero/10).setScaleX(0.4);
-                   caja.getChildren().add(numeros.get(numero/10));
-                   numeros.get(numero%10).setLayoutX(10);
-                   numeros.get(numero%10).setScaleX(0.4);
-                   caja.getChildren().add(numeros.get(numero%10));       
-            }
-
-        
-                
+            }else{
+                numeros.get(numero/10).setLayoutX(-10);
+                numeros.get(numero/10).setScaleX(0.4);
+                caja.getChildren().add(numeros.get(numero/10));
+                numeros.get(numero%10).setLayoutX(10);
+                numeros.get(numero%10).setScaleX(0.4);
+                caja.getChildren().add(numeros.get(numero%10));       
+            } 
             
-            
-        }
-            
-        
-        else{
+        }else{
              
             if (numero==1){
-                numeros.get(numero).setScaleX(0.4);
-                
+                numeros.get(numero).setScaleX(0.4);              
                 caja.getChildren().add(numeros.get(numero));
             }
             else{
                 caja.getChildren().add(numeros.get(numero));
             }
-            
-            
-        
         }
- 
-    
+        
     return caja;
     }
     
@@ -1261,32 +1243,32 @@ public class Lapiz {
         gancho.setLayoutX(posx);
         gancho.setLayoutY(posy);
         
-        Rectangle rectangulo1 = new Rectangle(20,0,10,200);
+        Rectangle rectangulo1 = new Rectangle(20,0,10,180);
         rectangulo1.setFill(Color.BLUE);
         rectangulo1.setStroke(Color.BLACK);
         rectangulo1.setStrokeWidth(2);
         
         
         
-        Rectangle rectangulo2 = new Rectangle(20,205,40,10);
+        Rectangle rectangulo2 = new Rectangle(20,185,40,10);
         rectangulo2.setFill(Color.BLUE);
         rectangulo2.setRotate(45);
         rectangulo2.setStroke(Color.BLACK);
         rectangulo2.setStrokeWidth(2);
        
-        Rectangle rectangulo3 = new Rectangle(22,230,40,10);
+        Rectangle rectangulo3 = new Rectangle(22,210,40,10);
         rectangulo3.setFill(Color.BLUE);
         rectangulo3.setRotate(-53);
         rectangulo3.setStroke(Color.BLACK);
         rectangulo3.setStrokeWidth(2);
         
-        Rectangle rectangulo4 = new Rectangle(-12,205,40,10);
+        Rectangle rectangulo4 = new Rectangle(-12,185,40,10);
         rectangulo4.setFill(Color.BLUE);
         rectangulo4.setRotate(-45);
         rectangulo4.setStroke(Color.BLACK);
         rectangulo4.setStrokeWidth(2);
        
-        Rectangle rectangulo5 = new Rectangle(-17,110,40,10);
+        Rectangle rectangulo5 = new Rectangle(-17,210,40,10);
         rectangulo5.setFill(Color.BLUE);
         rectangulo5.setRotate(53);
         rectangulo5.setStroke(Color.BLACK);
@@ -1302,21 +1284,20 @@ public class Lapiz {
         return gancho;
     }
     
-    public AnchorPane dibujarcuerda (AnchorPane anchor){
+    public AnchorPane dibujarcuerda (int posx, int posy){
         AnchorPane cuerda= new AnchorPane();
         cuerda.setPrefSize(100,500);
-        cuerda.setLayoutX(210);
-        cuerda.setLayoutY(442);
+        cuerda.setLayoutX(posx);
+        cuerda.setLayoutY(posy);
         
-        Rectangle rectangulo6 = new Rectangle(20,0,10,180);
+        Rectangle rectangulo6 = new Rectangle(20,0,10,200);
         rectangulo6.setFill(Color.RED);
         rectangulo6.setStroke(Color.BLACK);
         rectangulo6.setStrokeWidth(2);
         
         cuerda.getChildren().add(rectangulo6);
         
-        anchor.getChildren().add(cuerda);
         
-        return anchor;
+        return cuerda;
     }
 }
