@@ -31,11 +31,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
+        
         AnchorPane anchor = new AnchorPane();
-
-        Scene scena = new Scene (anchor);
-        stage.setWidth(1024);
-        stage.setHeight(768);
+        
+        Scene scena = new Scene (anchor,1024,768);
         scena.setFill(Color.web("#AABDD8"));
         stage.setMaximized(true);
 
@@ -48,53 +47,35 @@ public class App extends Application {
         
         
         Lapiz lapiz= new Lapiz(anchor);
-        //AnchorPane caja = new AnchorPane();
-        anchor=lapiz.dibujarfondo();
-        anchor=lapiz.dibujargrua();
-        //caja.setLayoutX(600);
-        //caja.setLayoutY(800);
-        //caja.setPrefSize(60, 60);
-        
-        AnchorPane caja = new AnchorPane();
-        anchor=lapiz.dibujarfondo();
-        
-        //anchor.getChildren().add(caja);
+        lapiz.dibujarfondo();
+        lapiz.dibujargrua();
+
         
         ArrayList<AnchorPane> cajasAnchor = new ArrayList();
-        
-        
-        for(int i=0;i<numerodecajas;i++){
+                
+        //Crea las cajas AnchorPane y las añade al arreglo de cajas de tipo Anchor y al arreglo de cajas de Almacén
+        for(int i=0;i<numerodecajas;i++){       
             Caja caja1 = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
             almacen.cajas.add(caja1);
             cajasAnchor.add(almacen.dibujarcaja(200+(80*i),850, anchor));
-            
         }
         
-        for (int i=0; i<18; i++){
+        //Obtiene los números generados previamente para que los valores calcen con los del arreglo que se muestra en consola
+        for (int i=0; i<18; i++){ 
             arreglo.add( almacen.cajas.get(i).peso);
-        }
-        
-        for (int i=0; i<18; i++){
             System.out.println(arreglo.get(i)+ " ");
         }
         
+        
         AnchorPane gancho = new AnchorPane();
-        gancho=almacen.dibujargancho(anchor);
+        gancho = almacen.dibujargancho(anchor,210,442);
         
-        anchor=lapiz.dibujargrua();
-        //caja.setLayoutX(600);
-        //caja.setLayoutY(800);
-        //caja.setPrefSize(60, 60);
+        AnchorPane gancho1 = new AnchorPane ();
+        gancho1 = almacen.dibujargancho(anchor, 350, 422);
         
-        //aja.setStyle("-fx-background-color: #533E00;");
-        
-        //anchor.getChildren().add(caja);
-        
-        
-        
+
+               
         Ordenamiento(arreglo,cajasAnchor,gancho);
-        
-      
         
         stage.setScene(scena);
         stage.show();
@@ -194,7 +175,6 @@ public class App extends Application {
             System.out.print(arreglo.get(i)+" "); 
         }
         System.out.println("]");
-    
     }
 
     public static void main(String[] args) {

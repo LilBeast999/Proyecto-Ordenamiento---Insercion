@@ -1111,11 +1111,11 @@ public class Lapiz {
         return Panecaja;
     }
     
-    public AnchorPane dibujargancho(AnchorPane anchor){
+    public AnchorPane dibujargancho(AnchorPane anchor, int posx, int posy){
         AnchorPane gancho= new AnchorPane();
         gancho.setPrefSize(100,500);
-        gancho.setLayoutX(210);
-        gancho.setLayoutY(442);
+        gancho.setLayoutX(posx);
+        gancho.setLayoutY(posy);
         
         Rectangle rectangulo1 = new Rectangle(20,0,10,80);
         rectangulo1.setFill(Color.BLUE);
@@ -1130,7 +1130,7 @@ public class Lapiz {
        
         Rectangle rectangulo3 = new Rectangle(22,110,40,10);
         rectangulo3.setFill(Color.BLUE);
-        rectangulo3.setRotate(-85);
+        rectangulo3.setRotate(-53);
         rectangulo3.setStroke(Color.BLACK);
         rectangulo3.setStrokeWidth(2);
         
@@ -1140,9 +1140,9 @@ public class Lapiz {
         rectangulo4.setStroke(Color.BLACK);
         rectangulo4.setStrokeWidth(2);
        
-        Rectangle rectangulo5 = new Rectangle(-22,113,40,10);
+        Rectangle rectangulo5 = new Rectangle(-17,110,40,10);
         rectangulo5.setFill(Color.BLUE);
-        rectangulo5.setRotate(85);
+        rectangulo5.setRotate(53);
         rectangulo5.setStroke(Color.BLACK);
         rectangulo5.setStrokeWidth(2);
         
