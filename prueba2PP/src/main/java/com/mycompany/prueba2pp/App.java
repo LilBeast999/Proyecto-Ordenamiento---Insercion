@@ -18,6 +18,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.animation.SequentialTransition;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.text.*;
 
@@ -140,7 +141,7 @@ public class App extends Application {
                     j--;
                 
                     System.out.print("--->  ");
-                    imprimeArreglo(arreglo);
+                    //imprimeArreglo(arreglo);
                 }
                 
                 TranslateTransition bajaGancho1 = new TranslateTransition(Duration.millis(velocidad),gancho);
