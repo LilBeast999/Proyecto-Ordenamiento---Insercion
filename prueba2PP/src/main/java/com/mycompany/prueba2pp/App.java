@@ -20,6 +20,7 @@ import javafx.animation.Timeline;
 import javafx.animation.SequentialTransition;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.*;
 
 
@@ -32,61 +33,22 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
+      
         
-        AnchorPane anchor = new AnchorPane();
-        
-        Scene scena = new Scene (anchor,1024,768);
-        scena.setFill(Color.web("#AABDD8"));
-        stage.setMaximized(true);
+       
+ 
+       Button boton = new Button("reiniciar");
+       
+       
+       boton.setOnAction(e -> {
+         
+         miCodigo(stage,boton);
+         
+        });
+       
+       miCodigo(stage,boton);
 
-        // apartir de aca OJO
-        ArrayList <Integer> arreglo = new ArrayList();
-        Almacen almacen = new Almacen(0,0);
-        System.out.println("Probando la herencia");
-        System.out.println("la posicion x es: "+almacen.getPosicionx());
-        int numerodecajas=18;
-        
-        
-        Lapiz lapiz= new Lapiz(anchor);
-        lapiz.dibujarfondo();
-        lapiz.dibujargrua();
-               
-        ArrayList<AnchorPane> cajasAnchor = new ArrayList();
-                
-        //Crea las cajas AnchorPane y las añade al arreglo de cajas de tipo Anchor y al arreglo de cajas de Almacén
-        for(int i=0;i<numerodecajas;i++){       
-            Caja caja1 = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
-            almacen.cajas.add(caja1);
-            cajasAnchor.add(almacen.dibujarcaja(200+(80*i),850, anchor,i));
-        }
-
-        
-        
-        //Obtiene los números generados previamente para que los valores calcen con los del arreglo que se muestra en consola
-        for (int i=0; i<18; i++){ 
-            arreglo.add( almacen.cajas.get(i).peso);
-            System.out.print(arreglo.get(i)+ " ");
-        }
-        
-        
-        AnchorPane gancho1 = new AnchorPane();
-        gancho1 = almacen.dibujargancho(anchor,210,462);
-        AnchorPane cuerda1 = new AnchorPane();
-        cuerda1 = lapiz.dibujarcuerda(210,442);
-        anchor.getChildren().add(cuerda1);
-        
-        AnchorPane gancho2 = new AnchorPane ();
-        gancho2 = almacen.dibujargancho(anchor, 350, 442);
-        AnchorPane cuerda2 = new AnchorPane();
-        cuerda2 = lapiz.dibujarcuerda(350,422);
-        anchor.getChildren().add(cuerda2);
-        
-
-               
-        Ordenamiento(arreglo,cajasAnchor,gancho1, cuerda1, gancho2, cuerda2);
-        
-        stage.setScene(scena);
-        stage.show();
+       
     }
 
     public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<AnchorPane>cajasAnchor,AnchorPane gancho1, AnchorPane cuerda1, AnchorPane gancho2, AnchorPane cuerda2){
@@ -235,6 +197,69 @@ public class App extends Application {
         }
         System.out.println("]");
     }
+    
+   public void miCodigo(Stage stage,Button boton) {
+      AnchorPane anchor = new AnchorPane();
+        
+        Scene scena = new Scene (anchor);
+        scena.setFill(Color.web("#AABDD8"));
+        stage.setMaximized(true);
+ 
+
+        // apartir de aca OJO
+        ArrayList <Integer> arreglo = new ArrayList();
+        Almacen almacen = new Almacen(0,0);
+        System.out.println("Probando la herencia");
+        System.out.println("la posicion x es: "+almacen.getPosicionx());
+        int numerodecajas=18;
+        
+        
+        Lapiz lapiz= new Lapiz(anchor);
+        lapiz.dibujarfondo();
+        lapiz.dibujargrua();
+               
+        ArrayList<AnchorPane> cajasAnchor = new ArrayList();
+                
+        //Crea las cajas AnchorPane y las añade al arreglo de cajas de tipo Anchor y al arreglo de cajas de Almacén
+        for(int i=0;i<numerodecajas;i++){       
+            Caja caja1 = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
+            almacen.cajas.add(caja1);
+            cajasAnchor.add(almacen.dibujarcaja(200+(80*i),850, anchor,i));
+        }
+
+        
+        
+        //Obtiene los números generados previamente para que los valores calcen con los del arreglo que se muestra en consola
+        for (int i=0; i<18; i++){ 
+            arreglo.add( almacen.cajas.get(i).peso);
+            System.out.print(arreglo.get(i)+ " ");
+        }
+        
+        
+        AnchorPane gancho1 = new AnchorPane();
+        gancho1 = almacen.dibujargancho(anchor,210,462);
+        AnchorPane cuerda1 = new AnchorPane();
+        cuerda1 = lapiz.dibujarcuerda(210,442);
+        anchor.getChildren().add(cuerda1);
+        
+        AnchorPane gancho2 = new AnchorPane ();
+        gancho2 = almacen.dibujargancho(anchor, 350, 442);
+        AnchorPane cuerda2 = new AnchorPane();
+        cuerda2 = lapiz.dibujarcuerda(350,422);
+        anchor.getChildren().add(cuerda2);
+        
+      
+
+        
+        anchor.getChildren().add(boton);
+
+               
+        Ordenamiento(arreglo,cajasAnchor,gancho1, cuerda1, gancho2, cuerda2);
+        
+        stage.setScene(scena);
+        stage.show();
+       
+   }    
 
     public static void main(String[] args) {
         launch();
