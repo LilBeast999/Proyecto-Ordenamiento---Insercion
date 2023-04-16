@@ -17,8 +17,15 @@ import javafx.concurrent.Task;
 import javafx.scene.layout.VBox;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
-import javafx.scene.text.*;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+
 
 /**
  * JavaFX App
@@ -285,17 +292,27 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
         
         
         Text[] etiquetasCodigo = {
-                new Text("1. Para i = 1 hasta n-1 hacer:"),
-                new Text("2.     j = i"),
-                new Text("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
-                new Text("4.         intercambiar A[j] y A[j-1]"),
-                new Text("5.         j = j - 1")
-        };
+        new Text("1. Para i = 1 hasta n-1 hacer:"),
+        new Text("2.     j = i"),
+        new Text("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
+        new Text("4.         intercambiar A[j] y A[j-1]"),
+        new Text("5.         j = j - 1")
+};
+
+// Crear un objeto Font con tamaño de fuente 20
+Font font = new Font(15);
+
+// Establecer la fuente en cada instancia de Text en el arreglo
+for (Text t : etiquetasCodigo) {
+    t.setFont(font);
+}
+
      
-        Text etiquetaArreglo = new Text(arrayToString(arreglo));
+        //Text etiquetaArreglo = new Text(arrayToString(arreglo));
+        
         VBox root = new VBox(10);
         root.getChildren().addAll(etiquetasCodigo);
-        root.getChildren().add(etiquetaArreglo);
+        //root.getChildren().add(etiquetaArreglo);
         
         Task<Void> task = new Task<Void>() {
             @Override
@@ -317,12 +334,12 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
                         resaltarLineaCodigo(etiquetasCodigo, 2);
                         Thread.sleep(TIEMPO_ESPERA);
                         
-                        etiquetaArreglo.setText(arrayToString(arreglo));
+                        //etiquetaArreglo.setText(arrayToString(arreglo));
                         
                         resaltarLineaCodigo(etiquetasCodigo, 3);
                         Thread.sleep(TIEMPO_ESPERA);
                         
-                        etiquetaArreglo.setText(arrayToString(arreglo));
+                        //etiquetaArreglo.setText(arrayToString(arreglo));
                         
                         resaltarLineaCodigo(etiquetasCodigo, 4);
                         Thread.sleep(TIEMPO_ESPERA);
@@ -330,7 +347,7 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
                     
                     arreglo.set(j, valorActual);
                     
-                    etiquetaArreglo.setText(arrayToString(arreglo));
+                    //etiquetaArreglo.setText(arrayToString(arreglo));
                 }
                 return null;
             }
@@ -339,7 +356,15 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
         Thread thread = new Thread(task);
         thread.setDaemon(true);
         thread.start();
+        root.setLayoutX(1000);
+        root.setLayoutY(210);
         root.setPrefSize(400,400);
+        // Crear un borde con un ancho de 2 píxeles y un color rojo
+Border border = new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, 
+                        CornerRadii.EMPTY, BorderWidths.DEFAULT));
+
+// Establecer el borde en el VBox
+root.setBorder(border);
         Anchor.getChildren().add(root);
         return Anchor; 
     }
