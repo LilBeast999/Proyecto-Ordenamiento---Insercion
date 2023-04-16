@@ -17,6 +17,7 @@ import javafx.concurrent.Task;
 import javafx.scene.layout.VBox;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
@@ -356,11 +357,12 @@ for (Text t : etiquetasCodigo) {
         Thread thread = new Thread(task);
         thread.setDaemon(true);
         thread.start();
+        root.setStyle("-fx-background-color: #FFFFFF;");
         root.setLayoutX(1000);
         root.setLayoutY(210);
-        root.setPrefSize(400,400);
+        root.setPrefSize(170,160);
         // Crear un borde con un ancho de 2 píxeles y un color rojo
-Border border = new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, 
+Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, 
                         CornerRadii.EMPTY, BorderWidths.DEFAULT));
 
 // Establecer el borde en el VBox
