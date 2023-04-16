@@ -1,5 +1,7 @@
 com\mycompany\prueba2pp\SystemInfo.class
 module-info.class
+com\mycompany\prueba2pp\Almacen.class
 com\mycompany\prueba2pp\App.class
-com\mycompany\prueba2pp\Cajas.class
 com\mycompany\prueba2pp\Lapiz.class
+.netbeans_automatic_build
+com\mycompany\prueba2pp\Cajas.class
