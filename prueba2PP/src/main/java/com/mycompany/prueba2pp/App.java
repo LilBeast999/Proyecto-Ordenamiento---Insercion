@@ -31,7 +31,7 @@ import javafx.scene.paint.Color;
 public class App extends Application {
     public int aux=32;
    
-private static final int TIEMPO_ESPERA = 800; 
+public static final int TIEMPO_ESPERA = 200; 
     @Override
     public void start(Stage stage) {
        
