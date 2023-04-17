@@ -1,35 +1,35 @@
 package com.mycompany.prueba2pp;
 
 import java.util.ArrayList;
+import java.util.Random;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import static javafx.scene.paint.Color.color;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
 import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
-import javafx.animation.AnimationTimer;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.animation.SequentialTransition;
+import static javafx.application.Application.launch;
+import javafx.concurrent.Task;
+import javafx.scene.layout.VBox;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.text.*;
-
-
-
+import javafx.scene.paint.Color;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
-
+private static final int TIEMPO_ESPERA = 1000; // 1 segundo
     @Override
     public void start(Stage stage) {
         
@@ -84,7 +84,7 @@ public class App extends Application {
 
                
         Ordenamiento(arreglo,cajasAnchor,gancho1, cuerda1, gancho2, cuerda2);
-        
+        anchor=Pseudocodigo(anchor, almacen.cajas);
         stage.setScene(scena);
         stage.show();
     }
@@ -286,9 +286,97 @@ public class App extends Application {
         }
         System.out.println("]");
     }
-
-    public static void main(String[] args) {
-        launch();
+    public AnchorPane Pseudocodigo(AnchorPane Anchor, ArrayList <Caja> caja) {
+        ArrayList <Integer> arreglo = new ArrayList();
+        
+        for(int i=0;i<caja.size();i++){ 
+            arreglo.add(caja.get(i).peso);
+        }
+        
+        
+        Text[] etiquetasCodigo = {
+                new Text("1. Para i = 1 hasta n-1 hacer:"),
+                new Text("2.     j = i"),
+                new Text("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
+                new Text("4.         intercambiar A[j] y A[j-1]"),
+                new Text("5.         j = j - 1")
+        };
+     
+        Text etiquetaArreglo = new Text(arreglo.toString());
+        VBox root = new VBox(10);
+        root.getChildren().addAll(etiquetasCodigo);
+        root.getChildren().add(etiquetaArreglo);
+        
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                for (int i = 1; i < arreglo.size(); i++) {
+                    resaltarLineaCodigo(etiquetasCodigo, 0);
+                    Thread.sleep(TIEMPO_ESPERA);
+                    
+                    int valorActual = arreglo.get(i);
+                    int j = i;
+                    
+                    resaltarLineaCodigo(etiquetasCodigo, 1);
+                    Thread.sleep(TIEMPO_ESPERA);
+                    
+                    while (j > 0 && arreglo.get(j-1) > valorActual) {
+                        arreglo.set(j, arreglo.get(j-1));
+                        j--;
+                        
+                        resaltarLineaCodigo(etiquetasCodigo, 2);
+                        Thread.sleep(TIEMPO_ESPERA);
+                        
+                        etiquetaArreglo.setText(arreglo.toString());
+                        
+                        resaltarLineaCodigo(etiquetasCodigo, 3);
+                        Thread.sleep(TIEMPO_ESPERA);
+                        
+                        etiquetaArreglo.setText(arreglo.toString());
+                        
+                        resaltarLineaCodigo(etiquetasCodigo, 4);
+                        Thread.sleep(TIEMPO_ESPERA);
+                    }
+                    
+                    arreglo.set(j, valorActual);
+                    etiquetaArreglo.setText(arreglo.toString());
+                }
+                return null;
+            }
+        };
+        
+        Thread thread = new Thread(task);
+        thread.setDaemon(true);
+        thread.start();
+        root.setStyle("-fx-background-color: #FFFFFF;"); 
+        root.setLayoutX(900); 
+        root.setLayoutY(210); 
+        root.setPrefSize(170,160); 
+        // Crear un borde con un ancho de 2 píxeles y un color rojo 
+Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,  
+                        CornerRadii.EMPTY, BorderWidths.DEFAULT)); 
+ 
+// Establecer el borde en el VBox 
+root.setBorder(border); 
+        Anchor.getChildren().add(root);
+        return Anchor; 
     }
-
+     
+    private void resaltarLineaCodigo(Text[] etiquetasCodigo, int indiceLinea) {
+        for (int i = 0; i < etiquetasCodigo.length; i++) {
+            if (i == indiceLinea) {
+                etiquetasCodigo[i].setFill(Color.RED);
+} else {
+etiquetasCodigo[i].setFill(Color.BLACK);
 }
+}
+}
+
+public static void main(String[] args) {
+    launch(args);
+}
+    
+    
+    
+    }
+    
