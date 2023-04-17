@@ -348,7 +348,7 @@ private static final int TIEMPO_ESPERA = 800;
         thread.setDaemon(true);
         thread.start();
         root.setStyle("-fx-background-color: #FFFFFF;"); 
-        root.setLayoutX(700); 
+        root.setLayoutX(200); 
         root.setLayoutY(210); 
         root.setPrefSize(290,165); 
         // Crear un borde con un ancho de 2 píxeles y un color rojo 
