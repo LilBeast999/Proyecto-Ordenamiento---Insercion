@@ -43,7 +43,7 @@ public class Almacen extends Lapiz {
         return anchor;
     }
 
-   public AnchorPane dibujarcaja (int posx,int posy, AnchorPane anchor, int indiceCaja){
+   public AnchorPane dibujarcaja (int posx,int posy, AnchorPane anchor, int indiceCaja,double escala){
       AnchorPane caja= new AnchorPane();
       caja.setLayoutX(posx);
       caja.setLayoutY(posy);
@@ -62,8 +62,10 @@ public class Almacen extends Lapiz {
       caja.getChildren().add(rectangulo);
       caja.getChildren().add(rectangulo1);
       
+      caja.setScaleX(escala);
+      caja.setScaleY(escala);
       
-       DibujarNumeros(caja, cajas.get(indiceCaja).peso, numeros);
+      DibujarNumeros(caja, cajas.get(indiceCaja).peso, numeros);
    
        
      
