@@ -8,11 +8,12 @@ package com.mycompany.prueba2pp;
  *
  * @author gusta
  */
-public class Cajas {
+public class Caja {
     int peso;
     int posicionx,posiciony;
         
-    public Cajas() {
+    public Caja(int peso) {
+        this.peso=peso;
     }
     
     public int getPeso(){
