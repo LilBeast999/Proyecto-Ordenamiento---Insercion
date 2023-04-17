@@ -17,16 +17,13 @@ import javafx.concurrent.Task;
 import javafx.scene.layout.VBox;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
 import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.text.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-
 
 /**
  * JavaFX App
@@ -85,9 +82,9 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
         anchor.getChildren().add(cuerda2);
         
 
-              
+               
         Ordenamiento(arreglo,cajasAnchor,gancho1, cuerda1, gancho2, cuerda2);
-        anchor=Pseudocodigo(anchor,arreglo);
+        anchor=Pseudocodigo(anchor, almacen.cajas);
         stage.setScene(scena);
         stage.show();
     }
@@ -289,31 +286,26 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
         }
         System.out.println("]");
     }
-    public AnchorPane Pseudocodigo(AnchorPane Anchor,ArrayList <Integer> arreglo) {
+    public AnchorPane Pseudocodigo(AnchorPane Anchor, ArrayList <Caja> caja) {
+        ArrayList <Integer> arreglo = new ArrayList();
+        
+        for(int i=0;i<caja.size();i++){ 
+            arreglo.add(caja.get(i).peso);
+        }
         
         
         Text[] etiquetasCodigo = {
-        new Text("1. Para i = 1 hasta n-1 hacer:"),
-        new Text("2.     j = i"),
-        new Text("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
-        new Text("4.         intercambiar A[j] y A[j-1]"),
-        new Text("5.         j = j - 1")
-};
-
-// Crear un objeto Font con tamaño de fuente 20
-Font font = new Font(15);
-
-// Establecer la fuente en cada instancia de Text en el arreglo
-for (Text t : etiquetasCodigo) {
-    t.setFont(font);
-}
-
+                new Text("1. Para i = 1 hasta n-1 hacer:"),
+                new Text("2.     j = i"),
+                new Text("3.     mientras j > 0 y A[j-1] > A[j] hacer:"),
+                new Text("4.         intercambiar A[j] y A[j-1]"),
+                new Text("5.         j = j - 1")
+        };
      
-        //Text etiquetaArreglo = new Text(arrayToString(arreglo));
-        
+        Text etiquetaArreglo = new Text(arreglo.toString());
         VBox root = new VBox(10);
         root.getChildren().addAll(etiquetasCodigo);
-        //root.getChildren().add(etiquetaArreglo);
+        root.getChildren().add(etiquetaArreglo);
         
         Task<Void> task = new Task<Void>() {
             @Override
@@ -329,26 +321,25 @@ for (Text t : etiquetasCodigo) {
                     Thread.sleep(TIEMPO_ESPERA);
                     
                     while (j > 0 && arreglo.get(j-1) > valorActual) {
-                        arreglo.set(j, j-1);
+                        arreglo.set(j, arreglo.get(j-1));
                         j--;
                         
                         resaltarLineaCodigo(etiquetasCodigo, 2);
                         Thread.sleep(TIEMPO_ESPERA);
                         
-                        //etiquetaArreglo.setText(arrayToString(arreglo));
+                        etiquetaArreglo.setText(arreglo.toString());
                         
                         resaltarLineaCodigo(etiquetasCodigo, 3);
                         Thread.sleep(TIEMPO_ESPERA);
                         
-                        //etiquetaArreglo.setText(arrayToString(arreglo));
+                        etiquetaArreglo.setText(arreglo.toString());
                         
                         resaltarLineaCodigo(etiquetasCodigo, 4);
                         Thread.sleep(TIEMPO_ESPERA);
                     }
                     
                     arreglo.set(j, valorActual);
-                    
-                    //etiquetaArreglo.setText(arrayToString(arreglo));
+                    etiquetaArreglo.setText(arreglo.toString());
                 }
                 return null;
             }
@@ -357,19 +348,20 @@ for (Text t : etiquetasCodigo) {
         Thread thread = new Thread(task);
         thread.setDaemon(true);
         thread.start();
-        root.setStyle("-fx-background-color: #FFFFFF;");
-        root.setLayoutX(1000);
-        root.setLayoutY(210);
-        root.setPrefSize(170,160);
-        // Crear un borde con un ancho de 2 píxeles y un color rojo
-Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, 
-                        CornerRadii.EMPTY, BorderWidths.DEFAULT));
-
-// Establecer el borde en el VBox
-root.setBorder(border);
+        root.setStyle("-fx-background-color: #FFFFFF;"); 
+        root.setLayoutX(900); 
+        root.setLayoutY(210); 
+        root.setPrefSize(170,160); 
+        // Crear un borde con un ancho de 2 píxeles y un color rojo 
+Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,  
+                        CornerRadii.EMPTY, BorderWidths.DEFAULT)); 
+ 
+// Establecer el borde en el VBox 
+root.setBorder(border); 
         Anchor.getChildren().add(root);
         return Anchor; 
     }
+     
     private void resaltarLineaCodigo(Text[] etiquetasCodigo, int indiceLinea) {
         for (int i = 0; i < etiquetasCodigo.length; i++) {
             if (i == indiceLinea) {
@@ -379,18 +371,6 @@ etiquetasCodigo[i].setFill(Color.BLACK);
 }
 }
 }
-    private String arrayToString(ArrayList<Integer> arreglo) {
-    StringBuilder sb = new StringBuilder();
-    sb.append("[ ");
-    for (int i = 0; i < arreglo.size(); i++) {
-        arreglo.add(i);
-        if (i < arreglo.size() - 1) {
-            sb.append(", ");
-        }
-    }
-    sb.append(" ]");
-    return sb.toString();
-}
 
 public static void main(String[] args) {
     launch(args);
@@ -399,7 +379,4 @@ public static void main(String[] args) {
     
     
     }
-    
-  
-    
     
