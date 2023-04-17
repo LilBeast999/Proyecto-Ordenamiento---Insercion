@@ -44,7 +44,7 @@ private static final int TIEMPO_ESPERA = 300; // 1 segundo
         Almacen almacen = new Almacen(0,0);
         System.out.println("Probando la herencia");
         System.out.println("la posicion x es: "+almacen.getPosicionx());
-        int numerodecajas=50;
+        int numerodecajas=34;
         
         
         Lapiz lapiz= new Lapiz(anchor);
@@ -86,17 +86,17 @@ private static final int TIEMPO_ESPERA = 300; // 1 segundo
         cuerda2 = lapiz.dibujarcuerda(350,422);
         anchor.getChildren().add(cuerda2);
         
-
+        
                
-        Ordenamiento(arreglo,cajasAnchor,gancho1, cuerda1, gancho2, cuerda2);
+        Ordenamiento(numerodecajas,arreglo,cajasAnchor,gancho1, cuerda1, gancho2, cuerda2);
         anchor=Pseudocodigo(anchor, almacen.cajas);
         stage.setScene(scena);
         stage.show();
     }
 
-    public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<AnchorPane>cajasAnchor,AnchorPane gancho1, AnchorPane cuerda1, AnchorPane gancho2, AnchorPane cuerda2){
+    public void Ordenamiento (int numerodecajas, ArrayList<Integer> arreglo, ArrayList<AnchorPane>cajasAnchor,AnchorPane gancho1, AnchorPane cuerda1, AnchorPane gancho2, AnchorPane cuerda2){
             imprimeArreglo(arreglo);
-            int velocidad = 1000 ;
+            int velocidad = 500 ;
             boolean bajoGancho2;
             SequentialTransition movCajas = new SequentialTransition();
             SequentialTransition movGancho1 = new SequentialTransition();
@@ -161,10 +161,10 @@ private static final int TIEMPO_ESPERA = 300; // 1 segundo
                     TranslateTransition trasVacioCaja2 = new TranslateTransition(Duration.millis(velocidad));
                     movCajas.getChildren().add(trasVacioCaja2);
                     TranslateTransition trasCuerda2_1 = new TranslateTransition(Duration.millis(velocidad),cuerda2);
-                    trasCuerda2_1.setToX((cajasAnchor.get(i).getLayoutX()-425));
+                    trasCuerda2_1.setToX((cajasAnchor.get(i).getLayoutX()-345));
                     movCuerda2.getChildren().add(trasCuerda2_1);
                     TranslateTransition trasGancho2_1 = new TranslateTransition(Duration.millis(velocidad),gancho2);
-                    trasGancho2_1.setToX((cajasAnchor.get(i).getLayoutX()-425));
+                    trasGancho2_1.setToX((cajasAnchor.get(i).getLayoutX()-345));
                     movGancho2.getChildren().add(trasGancho2_1);
                     
                     bajoGancho2 = true;
@@ -193,31 +193,31 @@ private static final int TIEMPO_ESPERA = 300; // 1 segundo
                     TranslateTransition trasVacioCuerda1_6 = new TranslateTransition(Duration.millis(velocidad));
                     movCuerda1.getChildren().add(trasVacioCuerda1_6);
                     TranslateTransition trasCuerda2_1 = new TranslateTransition(Duration.millis(velocidad),cuerda2);
-                    trasCuerda2_1.setByX(80);
+                    trasCuerda2_1.setByX(1500/numerodecajas);
                     movCuerda2.getChildren().add(trasCuerda2_1);
                     TranslateTransition trasGancho2_2 = new TranslateTransition(Duration.millis(velocidad),gancho2);
-                    trasGancho2_2.setByX(80);
+                    trasGancho2_2.setByX(1500/numerodecajas);
                     movGancho2.getChildren().add(trasGancho2_2); 
                     TranslateTransition trasCaja1 = new TranslateTransition(Duration.millis(velocidad),cajasAnchor.get(j));
-                    trasCaja1.setByX(80);
+                    trasCaja1.setByX(1500/numerodecajas);
                     movCajas.getChildren().add(trasCaja1);
 
                     
                     TranslateTransition trasCaja2 = new TranslateTransition(Duration.millis(velocidad),cajaAux);
-                    trasCaja2.setByX(-80);
+                    trasCaja2.setByX(-(1500/numerodecajas));
                     movCajas.getChildren().add(trasCaja2);
                     TranslateTransition trasGancho1_2 = new TranslateTransition(Duration.millis(velocidad),gancho1);
-                    trasGancho1_2.setByX(-80);
+                    trasGancho1_2.setByX(-(1500/numerodecajas));
                     movGancho1.getChildren().add(trasGancho1_2);
                     TranslateTransition trasCuerda1_3 = new TranslateTransition(Duration.millis(velocidad),cuerda1);
-                    trasCuerda1_3.setByX(-80);
+                    trasCuerda1_3.setByX(-(1500/numerodecajas));
                     movCuerda1.getChildren().add(trasCuerda1_3);
                     
                     TranslateTransition trasCuerda2_2 = new TranslateTransition(Duration.millis(velocidad),cuerda2);
-                    trasCuerda2_2.setByX(-160);
+                    trasCuerda2_2.setByX(-((1500/numerodecajas)*2));
                     movCuerda2.getChildren().add(trasCuerda2_2);
                     TranslateTransition trasGancho2_3 = new TranslateTransition(Duration.millis(velocidad),gancho2);
-                    trasGancho2_3.setByX(-160);
+                    trasGancho2_3.setByX(-((1500/numerodecajas)*2));
                     movGancho2.getChildren().add(trasGancho2_3);
 
                     j--;
