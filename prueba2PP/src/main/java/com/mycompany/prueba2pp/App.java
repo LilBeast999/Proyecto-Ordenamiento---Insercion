@@ -44,7 +44,7 @@ private static final int TIEMPO_ESPERA = 300;
         Almacen almacen = new Almacen(0,0);
         System.out.println("Probando la herencia");
         System.out.println("la posicion x es: "+almacen.getPosicionx());
-        int numerodecajas=34;
+        int numerodecajas=16;
         
         
         Lapiz lapiz= new Lapiz(anchor);
@@ -161,10 +161,10 @@ private static final int TIEMPO_ESPERA = 300;
                     TranslateTransition trasVacioCaja2 = new TranslateTransition(Duration.millis(velocidad));
                     movCajas.getChildren().add(trasVacioCaja2);
                     TranslateTransition trasCuerda2_1 = new TranslateTransition(Duration.millis(velocidad),cuerda2);
-                    trasCuerda2_1.setToX((cajasAnchor.get(i).getLayoutX()-345));
+                    trasCuerda2_1.setToX((cajasAnchor.get(i).getLayoutX()-((((numerodecajas/7)-9)*((numerodecajas/7)-9))+364)));
                     movCuerda2.getChildren().add(trasCuerda2_1);
                     TranslateTransition trasGancho2_1 = new TranslateTransition(Duration.millis(velocidad),gancho2);
-                    trasGancho2_1.setToX((cajasAnchor.get(i).getLayoutX()-345));
+                    trasGancho2_1.setToX((cajasAnchor.get(i).getLayoutX()-((((numerodecajas/7)-9)*((numerodecajas/7)-9))+364)));
                     movGancho2.getChildren().add(trasGancho2_1);
                     
                     bajoGancho2 = true;
