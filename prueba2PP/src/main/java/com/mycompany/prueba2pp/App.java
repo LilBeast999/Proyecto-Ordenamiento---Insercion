@@ -29,7 +29,7 @@ import javafx.scene.paint.Color;
  * JavaFX App
  */
 public class App extends Application {
-private static final int TIEMPO_ESPERA = 300; // 1 segundo
+private static final int TIEMPO_ESPERA = 300; 
     @Override
     public void start(Stage stage) {
         
@@ -346,18 +346,24 @@ private static final int TIEMPO_ESPERA = 300; // 1 segundo
                 }
                 return null;
             }
+            
+            
         };
+        
+        task.setOnSucceeded(event -> {
+    resaltarLineaCodigo(etiquetasCodigo, -1);
+});
         
         Thread thread = new Thread(task);
         thread.setDaemon(true);
         thread.start();
         root.setStyle("-fx-background-color: #FFFFFF;"); 
-        root.setLayoutX(900); 
+        root.setLayoutX(700); 
         root.setLayoutY(210); 
-        root.setPrefSize(170,160); 
+        root.setPrefSize(290,165); 
         // Crear un borde con un ancho de 2 píxeles y un color rojo 
 Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,  
-                        CornerRadii.EMPTY, BorderWidths.DEFAULT)); 
+                        CornerRadii.EMPTY, BorderWidths.FULL)); 
  
 // Establecer el borde en el VBox 
 root.setBorder(border); 
