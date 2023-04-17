@@ -29,7 +29,7 @@ import javafx.scene.paint.Color;
  * JavaFX App
  */
 public class App extends Application {
-private static final int TIEMPO_ESPERA = 1000; // 1 segundo
+private static final int TIEMPO_ESPERA = 300; // 1 segundo
     @Override
     public void start(Stage stage) {
         
@@ -44,26 +44,31 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
         Almacen almacen = new Almacen(0,0);
         System.out.println("Probando la herencia");
         System.out.println("la posicion x es: "+almacen.getPosicionx());
-        int numerodecajas=18;
+        int numerodecajas=50;
         
         
         Lapiz lapiz= new Lapiz(anchor);
         lapiz.dibujarfondo();
         lapiz.dibujargrua();
-               
+        
+        ArrayList<Double> escalas = new ArrayList();      
+        for (int i = 1; i <= 49 ; i++) {
+            escalas.add(0, (double)((i * 100) / 48)/100);
+        }
+  
         ArrayList<AnchorPane> cajasAnchor = new ArrayList();
                 
         //Crea las cajas AnchorPane y las añade al arreglo de cajas de tipo Anchor y al arreglo de cajas de Almacén
         for(int i=0;i<numerodecajas;i++){       
             Caja caja1 = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
             almacen.cajas.add(caja1);
-            cajasAnchor.add(almacen.dibujarcaja(200+(80*i),850, anchor,i));
+            cajasAnchor.add(almacen.dibujarcaja(150+((1500/numerodecajas)*i),850, anchor,i,escalas.get(numerodecajas-16)));
         }
 
         
         
         //Obtiene los números generados previamente para que los valores calcen con los del arreglo que se muestra en consola
-        for (int i=0; i<18; i++){ 
+        for (int i=0; i<numerodecajas; i++){ 
             arreglo.add( almacen.cajas.get(i).peso);
             System.out.print(arreglo.get(i)+ " ");
         }
@@ -90,9 +95,8 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
     }
 
     public void Ordenamiento (ArrayList<Integer> arreglo, ArrayList<AnchorPane>cajasAnchor,AnchorPane gancho1, AnchorPane cuerda1, AnchorPane gancho2, AnchorPane cuerda2){
-            System.out.print("--->  ");
             imprimeArreglo(arreglo);
-            int velocidad = 300 ;
+            int velocidad = 1000 ;
             boolean bajoGancho2;
             SequentialTransition movCajas = new SequentialTransition();
             SequentialTransition movGancho1 = new SequentialTransition();
@@ -146,8 +150,7 @@ private static final int TIEMPO_ESPERA = 1000; // 1 segundo
                 trasCaja.setByY(-165);
                 movCajas.getChildren().add(trasCaja);         
                 j=i-1;
-                
-                
+                              
                 if(j>=0 && aux<arreglo.get(j)){
                     
                     //Gancho2 va a la caja que debe mover
