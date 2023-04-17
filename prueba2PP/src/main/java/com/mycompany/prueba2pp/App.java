@@ -30,76 +30,46 @@ import javafx.scene.paint.Color;
  */
 public class App extends Application {
 private static final int TIEMPO_ESPERA = 300; 
+    public int aux=32;
+   
     @Override
     public void start(Stage stage) {
-      
+       
         
        
- 
        Button boton = new Button("reiniciar");
-       
+       Button retroceder = new Button("disminuye cajas");
+       Button avanzar = new Button("aumenta cajas");
        
        boton.setOnAction(e -> {
-         
-         miCodigo(stage,boton);
+        
+         miCodigo(stage,boton,retroceder,avanzar);
          
         });
        
-       miCodigo(stage,boton);
-
-        // apartir de aca OJO
-        ArrayList <Integer> arreglo = new ArrayList();
-        Almacen almacen = new Almacen(0,0);
-        System.out.println("Probando la herencia");
-        System.out.println("la posicion x es: "+almacen.getPosicionx());
-        int numerodecajas=16;
+        retroceder.setOnAction(e -> {
+         if (aux>17){  
+         miCodigo(stage,boton,retroceder,avanzar);
+         disminuir();
+         }
+        });
         
+        avanzar.setOnAction(e -> {
         
-        Lapiz lapiz= new Lapiz(anchor);
-        lapiz.dibujarfondo();
-        lapiz.dibujargrua();
-        
-        ArrayList<Double> escalas = new ArrayList();      
-        for (int i = 1; i <= 49 ; i++) {
-            escalas.add(0, (double)((i * 100) / 48)/100);
-        }
-  
-        ArrayList<AnchorPane> cajasAnchor = new ArrayList();
-                
-        //Crea las cajas AnchorPane y las añade al arreglo de cajas de tipo Anchor y al arreglo de cajas de Almacén
-        for(int i=0;i<numerodecajas;i++){       
-            Caja caja1 = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
-            almacen.cajas.add(caja1);
-            cajasAnchor.add(almacen.dibujarcaja(150+((1500/numerodecajas)*i),850, anchor,i,escalas.get(numerodecajas-16)));
-        }
+            
+         if (aux<=63){   
+         miCodigo(stage,boton,retroceder,avanzar);
+         aumentar();
+         }
+        });
+       
+       
+       
+       miCodigo(stage,boton,retroceder,avanzar);
+       
+       
 
         
-        
-        //Obtiene los números generados previamente para que los valores calcen con los del arreglo que se muestra en consola
-        for (int i=0; i<numerodecajas; i++){ 
-            arreglo.add( almacen.cajas.get(i).peso);
-            System.out.print(arreglo.get(i)+ " ");
-        }
-        
-        
-        AnchorPane gancho1 = new AnchorPane();
-        gancho1 = almacen.dibujargancho(anchor,210,462);
-        AnchorPane cuerda1 = new AnchorPane();
-        cuerda1 = lapiz.dibujarcuerda(210,442);
-        anchor.getChildren().add(cuerda1);
-        
-        AnchorPane gancho2 = new AnchorPane ();
-        gancho2 = almacen.dibujargancho(anchor, 350, 442);
-        AnchorPane cuerda2 = new AnchorPane();
-        cuerda2 = lapiz.dibujarcuerda(350,422);
-        anchor.getChildren().add(cuerda2);
-        
-        
-               
-        Ordenamiento(numerodecajas,arreglo,cajasAnchor,gancho1, cuerda1, gancho2, cuerda2);
-        anchor=Pseudocodigo(anchor, almacen.cajas);
-        stage.setScene(scena);
-        stage.show();
     }
 
     public void Ordenamiento (int numerodecajas, ArrayList<Integer> arreglo, ArrayList<AnchorPane>cajasAnchor,AnchorPane gancho1, AnchorPane cuerda1, AnchorPane gancho2, AnchorPane cuerda2){
@@ -388,6 +358,92 @@ etiquetasCodigo[i].setFill(Color.BLACK);
 }
 }
 }
+    
+    public void miCodigo(Stage stage, Button boton, Button boton2, Button boton3){
+        
+        AnchorPane anchor = new AnchorPane(); 
+         
+        Scene scena = new Scene (anchor); 
+        scena.setFill(Color.web("#AABDD8")); 
+        stage.setMaximized(true); 
+        
+        // apartir de aca OJO
+        ArrayList <Integer> arreglo = new ArrayList();
+        Almacen almacen = new Almacen(0,0);
+        System.out.println("Probando la herencia");
+        System.out.println("la posicion x es: "+almacen.getPosicionx());
+        int numerodecajas=this.aux;
+        
+        
+        Lapiz lapiz= new Lapiz(anchor);
+        lapiz.dibujarfondo();
+        lapiz.dibujargrua();
+        
+        ArrayList<Double> escalas = new ArrayList();      
+        for (int i = 1; i <= 49 ; i++) {
+            escalas.add(0, (double)((i * 100) / 48)/100);
+        }
+  
+        ArrayList<AnchorPane> cajasAnchor = new ArrayList();
+                
+        //Crea las cajas AnchorPane y las añade al arreglo de cajas de tipo Anchor y al arreglo de cajas de Almacén
+        for(int i=0;i<numerodecajas;i++){       
+            Caja caja1 = new Caja((int)Math.floor(Math.random()*(99-1+1)+1));
+            almacen.cajas.add(caja1);
+            cajasAnchor.add(almacen.dibujarcaja(150+((1500/numerodecajas)*i),850, anchor,i,escalas.get(numerodecajas-16)));
+        }
+
+        
+        
+        //Obtiene los números generados previamente para que los valores calcen con los del arreglo que se muestra en consola
+        for (int i=0; i<numerodecajas; i++){ 
+            arreglo.add( almacen.cajas.get(i).peso);
+            System.out.print(arreglo.get(i)+ " ");
+        }
+        
+        
+        AnchorPane gancho1 = new AnchorPane();
+        gancho1 = almacen.dibujargancho(anchor,210,462);
+        AnchorPane cuerda1 = new AnchorPane();
+        cuerda1 = lapiz.dibujarcuerda(210,442);
+        anchor.getChildren().add(cuerda1);
+        
+        AnchorPane gancho2 = new AnchorPane ();
+        gancho2 = almacen.dibujargancho(anchor, 350, 442);
+        AnchorPane cuerda2 = new AnchorPane();
+        cuerda2 = lapiz.dibujarcuerda(350,422);
+        anchor.getChildren().add(cuerda2);
+        
+        
+              
+        Ordenamiento(numerodecajas,arreglo,cajasAnchor,gancho1, cuerda1, gancho2, cuerda2);
+        anchor=Pseudocodigo(anchor, almacen.cajas);
+        anchor.getChildren().add(boton);
+        boton2.setLayoutX(60);
+        boton3.setLayoutX(170);
+        anchor.getChildren().add(boton3);
+        anchor.getChildren().add(boton2);
+        stage.setScene(scena);
+        stage.show();
+    
+    
+    
+    
+    
+    
+    }
+    
+    public void disminuir(){
+        this.aux--;
+                
+    
+    
+    }
+    
+    public void aumentar(){
+        this.aux++;
+    }
+    
 
 public static void main(String[] args) {
     launch(args);
